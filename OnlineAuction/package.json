@@ -1,24 +1,33 @@
 {
-  "name": "online-auction",
-  "version": "1.0.0",
-  "description": "Team work for JavaScript Applications Course 2017, Team Elderberry",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MartinaShebova/Team-Elderberry-Project.git"
-  },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/MartinaShebova/Team-Elderberry-Project/issues"
-  },
-  "homepage": "https://github.com/MartinaShebova/Team-Elderberry-Project#readme",
-  "dependencies": {
-    "express": "^4.15.2",
-    "mongoose": "^4.9.5",
-    "passport": "^0.3.2"
-  }
+    "name": "online-auction",
+    "version": "1.0.0",
+    "description": "Team work for JavaScript Applications Course 2017, Team Elderberry",
+    "main": "index.js",
+    "scripts": {
+        "dev": "./node_modules/.bin/nodemon server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/MartinaShebova/Team-Elderberry-Project.git"
+    },
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/MartinaShebova/Team-Elderberry-Project/issues"
+    },
+    "homepage": "https://github.com/MartinaShebova/Team-Elderberry-Project#readme",
+    "dependencies": {
+        "bcrypt-nodejs": "0.0.3",
+        "body-parser": "^1.17.1",
+        "express": "^4.15.2",
+        "jsonwebtoken": "^7.3.0",
+        "mongoose": "^4.9.5",
+        "morgan": "^1.8.1",
+        "passport": "^0.3.2",
+        "passport-jwt": "^2.2.1"
+    },
+    "devDependencies": {
+        "nodemon": "^1.11.0"
+    }
 }
