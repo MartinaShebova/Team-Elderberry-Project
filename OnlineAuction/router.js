@@ -1,6 +1,7 @@
 'use strict';
 
 const AuthenticationController = require('./app/controllers/authentication');
+const UserController = require('./app/controllers/user');
 const express = require('express');
 const passport = require('passport');
 
@@ -20,6 +21,15 @@ module.exports = function(app) {
 
     // Registration route
     authRoutes.post('/register', AuthenticationController.register);
+    // Login route
+    authRoutes.post('/login', requireLogin, AuthenticationController.login);
+
+
+    // Set user routes as a subgroup/middleware to apiRoutes
+    apiRoutes.use('/user', userRoutes);
+
+    // View user profile route
+    userRoutes.get('/:userId', requireAuth, UserController.viewProfile);
 
     app.use('/api', apiRoutes);
 }
