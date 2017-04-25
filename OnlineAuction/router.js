@@ -17,7 +17,7 @@ module.exports = function(app) {
 
 
     // Set auth routes as subgroup/middleware to apiRoutes
-    apiRoutes.use('/auth', authRoutes);
+    apiRoutes.use('/auth', authRoutes); 
 
     // Registration route
     authRoutes.post('/register', AuthenticationController.register);
@@ -32,4 +32,4 @@ module.exports = function(app) {
     userRoutes.get('/:userId', requireAuth, UserController.viewProfile);
 
     app.use('/api', apiRoutes);
-}
+};
