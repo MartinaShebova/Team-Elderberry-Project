@@ -17,8 +17,10 @@ app.use(bodyParser.json());
 
 app.use(logger('dev'));
 
-app.use("/libs", express.static(path.join(__dirname, "../../node_modules")));
-app.use("/public", express.static(path.join(__dirname, "/../../public")));
+
+app.use("/libs", express.static(path.join(__dirname, "/node_modules")));
+app.use("/public", express.static(path.join(__dirname, "/public"))); 
+app.use("/bower", express.static(path.join(__dirname, "/bower_components")));
 
 mongoose.connect(config.database);
 mongoose.Promise = global.Promise;
