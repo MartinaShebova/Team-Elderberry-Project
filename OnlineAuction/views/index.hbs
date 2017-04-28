@@ -5,60 +5,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Online Auction</title>
-    <link rel="icon" href="/public/images/favicon-16x16.png" type="image/gif" sizes="16x16">
+    <title>Bid=>Click=>Buy</title>
+
+    {{!--Add favicon--}}
+    <link rel="icon" href="/public/images/favicon-16x16.png" type="image/gif" sizes="16x16"> 
+    
+    {{!--Bootstrap--}}
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
+        crossorigin="anonymous"> 
+    
+    {{!--Custom css--}}
+    <link rel="stylesheet" href="/public/styles/main.css"> 
+    
+    {{!--SystemJs--}}
+    <script src="libs/systemjs/dist/system.js"></script>
+    <script src="/public/js/systemjs-config.js"></script>
+
+    {{!--Navigo--}}
+    <script src="libs/navigo/lib/navigo.js"></script>
+
+    {{!--Load custom modules--}}
+    <script>
+        System.import('main');
+    </script>
 </head>
 
 <body>
-    <nav class="navbar navbar-default">
-        <div class="container">
-
-        <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-                <a class="navbar-brand" href="#">Brand</a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Link</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <form id="signin" class="navbar-form navbar-right" role="form">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input id="email" type="email" class="form-control" name="email" value="" placeholder="Email Address">
-                        <div>
-
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                <input id="password" type="password" class="form-control" name="password" value="" placeholder="Password">
+    <div class="container">
+        <div class="navbar-wrapper">
+            <div class="container-fluid">
+                <nav class="navbar navbar-fixed-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                                aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                            <div class="navbar-brand">
+                                <a href="/">
+                                    <img src="/public/images/auction-logo.jpg" class="img-responsive img-rounded" />
+                                </a>
                             </div>
+                        </div>
+                        <div id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="/" class="">Home</a></li>
+                                <li><a href="#/sell">Sell</a></li>
+                                <li><a href="#/buy">Buy</a></li>
+                                <li><a href="#/about">About Us</a></li>
+                                <li><a href="#/contact">Contact</a></li>
+                                <li><a href="#/FAQ">FAQ</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav pull-right">
+                                <li class=" dropdown"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true"
+                                        aria-expanded="false">Signed in as  <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Change Password</a></li>
+                                        <li><a href="#">My Profile</a></li>
+                                    </ul>
+                                </li>
+                                <li class=""><a href="#">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>{{!--container-fluid ends--}}
+        </div>{{!--navbar ends--}}
 
-                            <button type="submit" class="btn btn-primary">Login</button>
-                </form>
+        {{!--Login/Register form starts--}}
+        <div class="container">
+            <div class="row" style="margin-top:50px; margin-left:200px">
+                <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+                    <form role="form">
+                        <fieldset>
+                            <h2>Login/Create Account</h2>
+                            <hr class="colorgraph">
+                            <div class="form-group">
+                                <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password">
+                            </div>
+                            <hr class="colorgraph">
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <input type="submit" class="btn btn-lg btn-success btn-block" value="Sign In">
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <a href="" class="btn btn-lg btn-primary btn-block">Register</a>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
                 </div>
-                </div>
-    </nav>
-    <script src="libs/systemjs/dist/system.js"></script>
-    <script src="/public/js/systemjs-config.js"></script>
+            </div>
+        </div>
+    </div> {{!--main container ends--}}
 </body>
 
 </html>

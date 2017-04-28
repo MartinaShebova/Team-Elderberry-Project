@@ -9,11 +9,9 @@ System.config({
 
         // External Libraries
         'jquery': '/bower/jquery/dist/jquery.js',
-        'bootstrap-js':  '/bower/bootstrap/dist/js/bootstrap.js',
+        'bootstrap-js': '/bower/bootstrap/dist/js/bootstrap.js',
 
         // App Modules
-        'app': 'public/js/app.js',
+        'main': 'public/js/main.js',
     }
 });
-
-System.import('app');
