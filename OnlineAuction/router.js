@@ -12,8 +12,8 @@ const requireLogin = passport.authenticate('local', { session: false });
 
 module.exports = function(app) {
     const apiRoutes = express.Router(),
-        authRoutes = express.Router(),
-        userRoutes = express.Router();
+          authRoutes = express.Router(),
+          userRoutes = express.Router();
 
 
     // Set auth routes as subgroup/middleware to apiRoutes
@@ -23,7 +23,6 @@ module.exports = function(app) {
     authRoutes.post('/register', AuthenticationController.register);
     // Login route
     authRoutes.post('/login', requireLogin, AuthenticationController.login);
-
 
     // Set user routes as a subgroup/middleware to apiRoutes
     apiRoutes.use('/user', userRoutes);

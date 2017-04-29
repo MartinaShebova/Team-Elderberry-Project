@@ -11,7 +11,11 @@ System.config({
         'jquery': '/bower/jquery/dist/jquery.js',
         'bootstrap-js': '/bower/bootstrap/dist/js/bootstrap.js',
 
-        // App Modules
+        // App files
         'main': 'public/js/main.js',
+        'requests': 'public/js/requester.js',
+        'data': 'public/js/data.js',
+        'homeController': 'public/js/controllers/homeController.js',
+        'sellController': 'public/js/controllers/sellController.js'
     }
 });

@@ -1,109 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Bid=>Click=>Buy</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Bid-Click-Buy</title>
 
-    {{!--Add favicon--}}
-    <link rel="icon" href="/public/images/favicon-16x16.png" type="image/gif" sizes="16x16"> 
-    
-    {{!--Bootstrap--}}
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous"> 
-    
-    {{!--Custom css--}}
-    <link rel="stylesheet" href="/public/styles/main.css"> 
-    
-    {{!--SystemJs--}}
-    <script src="libs/systemjs/dist/system.js"></script>
-    <script src="/public/js/systemjs-config.js"></script>
+        {{!--Add favicon--}}
+        <link rel="icon" href="/public/images/favicon-16x16.png" type="image/gif" sizes="16x16"> 
+        
+        {{!--Bootstrap--}}
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+            crossorigin="anonymous"> 
+        
+        {{!--Custom css--}}
+        <link rel="stylesheet" href="/public/styles/main.css">
 
-    {{!--Navigo--}}
-    <script src="libs/navigo/lib/navigo.js"></script>
+        <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+        
+        {{!--SystemJs--}}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+        <script src="libs/systemjs/dist/system.js"></script>
+        <script src="/public/js/systemjs-config.js"></script>
+        
+        {{!--Navigo--}}
+        <script src="libs/navigo/lib/navigo.js"></script>
 
-    {{!--Load custom modules--}}
-    <script>
-        System.import('main');
-    </script>
-</head>
+        {{!--Custom js--}}
 
-<body>
-    <div class="container">
-        <div class="navbar-wrapper">
-            <div class="container-fluid">
-                <nav class="navbar navbar-fixed-top">
-                    <div class="container">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-                                aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                            <div class="navbar-brand">
-                                <a href="/">
-                                    <img src="/public/images/auction-logo.jpg" class="img-responsive img-rounded" />
-                                </a>
+        {{!--Load custom modules--}}
+        <script>
+            System.import('main');            
+            System.import('bootstrap-js');
+        </script>
+    </head>
+
+    <body>
+        <div class="container">{{!--main container starts--}}
+            <div class="navbar-wrapper">{{!--nav bar starts--}}
+                    <nav class="navbar navbar-fixed-top">
+                        <div class="container">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                                    aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                                <div class="navbar-brand">
+                                    <h3 style="display:inline"><a href="/">Bid<span>Click</span>Buy</a></h3>
+                                </div>
+                            </div>
+                            <div id="navbar" class="navbar-collapse">
+                                <ul class="nav navbar-nav">
+                                    <li class="active"><a href="/" class="">Home</a></li>
+                                    <li><a href="#/sell">Sell</a></li>
+                                    <li><a href="#/buy">Buy</a></li>
+                                    <li><a href="#/about">About Us</a></li>
+                                    <li><a href="#/contact">Contact</a></li>
+                                    <li><a href="#/FAQ">FAQ</a></li>
+                                </ul>
+                                <ul class="nav navbar-nav pull-right">
+                                    <li class=" dropdown"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true"
+                                            aria-expanded="false">Signed in as  <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Change Password</a></li>
+                                            <li><a href="#">My Profile</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class=""><a href="#">Logout</a></li>
+                                </ul>
                             </div>
                         </div>
-                        <div id="navbar" class="navbar-collapse collapse">
-                            <ul class="nav navbar-nav">
-                                <li class="active"><a href="/" class="">Home</a></li>
-                                <li><a href="#/sell">Sell</a></li>
-                                <li><a href="#/buy">Buy</a></li>
-                                <li><a href="#/about">About Us</a></li>
-                                <li><a href="#/contact">Contact</a></li>
-                                <li><a href="#/FAQ">FAQ</a></li>
-                            </ul>
-                            <ul class="nav navbar-nav pull-right">
-                                <li class=" dropdown"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true"
-                                        aria-expanded="false">Signed in as  <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Change Password</a></li>
-                                        <li><a href="#">My Profile</a></li>
-                                    </ul>
-                                </li>
-                                <li class=""><a href="#">Logout</a></li>
-                            </ul>
-                        </div>
+                    </nav>
+            </div>{{!--navbar ends--}}
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+            <div class="row">{{!--change information div depends on route chosen--}}
+                <div class="col-sm-12">
+
+                {{!--Search form--}}
+                <form method="GET"> 
+                <div class="row">
+                    <div class="col-xs-6 col-md-4">
+                    <div class="input-group">
+                <input type="text" class="form-control" placeholder="Buy something cool :)" id="txtSearch"/>
+                <div class="input-group-btn">
+                        <button class="btn btn-info" type="submit">
+                        <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                </div>
+                </div>
                     </div>
-                </nav>
-            </div>{{!--container-fluid ends--}}
-        </div>{{!--navbar ends--}}
+                </div>
+                </form>
 
-        {{!--Login/Register form starts--}}
-        <div class="container">
-            <div class="row" style="margin-top:50px; margin-left:200px">
-                <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-                    <form role="form">
-                        <fieldset>
-                            <h2>Login/Create Account</h2>
-                            <hr class="colorgraph">
-                            <div class="form-group">
-                                <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address">
-                            </div>
-                            <div class="form-group">
-                                <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password">
-                            </div>
-                            <hr class="colorgraph">
-                            <div class="row">
-                                <div class="col-xs-6 col-sm-6 col-md-6">
-                                    <input type="submit" class="btn btn-lg btn-success btn-block" value="Sign In">
-                                </div>
-                                <div class="col-xs-6 col-sm-6 col-md-6">
-                                    <a href="" class="btn btn-lg btn-primary btn-block">Register</a>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </form>
+                {{!--Jumbotron with offers--}}
+
+    <div class="row">
+      <div class="col-sm-3">
+        <h2>Heading</h2>
+        <img class="img-responsive img-rounded" src="https://www.w3schools.com/css/img_fjords.jpg" style="width:100%; height: auto"/>
+        <p class="text-justify">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><strong>Start price: </strong><span>10 BGN</span></p>
+        <p><strong>Item Location: </strong><span>Nevada</span></p>
+        <hr />
+        <p><strong>Offer expires at: </strong><span>TO DO CLOCK</span></p>
+        <p><strong>Current best offer: </strong><span>23 BGN</span></p>
+        <p><strong>Bid By: </strong></p>  
+        <span><a class="btn btn-default btn-sm" href="#" role="button">5 BGN</a></span>
+        <span><a class="btn btn-success btn-sm" href="#" role="button">10 BGN</a></span>
+        <span><a class="btn btn-danger btn-sm" href="#" role="button">15 BGN</a></span>
+      </div>
+      <div class="col-md-3">
+        <h2>Heading</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+      </div>
+      <div class="col-md-3">
+        <h2>Heading</h2>
+        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+      </div>
+      <div class="col-md-3">
+        <h2>Heading</h2>
+        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+      </div>
+    </div>
+
+    <hr>
+
+        <div class="row">
+      <div class="col-md-4">
+        <h2>Heading</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>Heading</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>Heading</h2>
+        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+      </div>
+    </div>
+
+
+<form class="well form-horizontal" action=" " method="post" id="contact_form">
+    <fieldset>
+
+        <!-- Form Name -->
+        <legend class="text-center" style="font: normal 36px 'Cookie', cursive;">Earn money by selling unnecessary stuff!</legend>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+            <label class="col-md-4 control-label">Title</label>
+            <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                    <input class="form-control" type="text">
                 </div>
             </div>
         </div>
-    </div> {{!--main container ends--}}
-</body>
 
+        <!-- Select Basic -->
+
+        <div class="form-group">
+            <label class="col-md-4 control-label">Category</label>
+            <div class="col-md-4 selectContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                    <select class="form-control selectpicker">
+                                <option value=" " >Select Category</option>
+                                <option>PC/Laptop/Accessories</option>
+                                <option>Phones/Accessories</option>
+                                <option >TV/Accessories</option>
+                                <option >Clothes</option>
+                                <option >Toys</option>
+                                <option >Antiques</option>
+                                <option >Books</option>
+                                <option >Tickets</option>
+                                <option >Other</option>
+                            </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+            <label class="col-md-4 control-label">Description</label>
+            <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-blackboard"></i></span>
+                    <textarea class="form-control"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+            <label class="col-md-4 control-label">Item Location</label>
+            <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                    <input class="form-control" type="text">
+                </div>
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label">Start Price</label>
+            <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-star"></i></span>
+                    <input class="form-control" type="text">
+                </div>
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label">Upload Picture</label>
+            <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <label class="btn btn-default btn-file">
+                        Browse from PC <input type="file" style="display: none;">
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label"></label>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-info">Send <span class="glyphicon glyphicon-send"></span></button>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+
+
+
+
+
+
+
+
+                    {{!--Call some template from templates folder--}}
+                </div>
+            </div>{{!--change information div depends on route chosen END--}}
+
+            <footer class="footer-distributed">
+                <div class="footer-left">
+                    <h3>Bid<span>Click</span>Buy</h3>
+                    <p class="footer-company-name">Team Elderberry &copy; 2017</p>
+                </div>
+                <div class="footer-right">
+                    <p class="footer-company-about">
+                        <span>Like us</span>
+                    </p>
+                    <div class="footer-icons">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-github"></i></a>
+                    </div>
+                </div>
+            </footer>
+        </div> {{!--contant main container ends--}}
+    </body>
 </html>
