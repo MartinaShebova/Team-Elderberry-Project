@@ -9,15 +9,16 @@ System.config({
 
         // External Libraries
         'jquery': '/bower/jquery/dist/jquery.js',
-        'bootstrap-js': '/bower/bootstrap/dist/js/bootstrap.js',
+        'bootstrap-js': '/libs/bootstrap/dist/js/bootstrap.min.js',
 
         // App files
         'main': 'public/js/main.js',
-        'requests': 'public/js/requester.js',
+        'requester': 'public/js/requester.js',
+        'templateGenerator': 'public/js/templates.js',
         'data': 'public/js/data.js',
         'homeController': 'public/js/controllers/homeController.js',
         'sellController': 'public/js/controllers/sellController.js',
-        'loginRegisterController': 'public/js/controllers/loginRegisterController.js',
-        'templateGenerator': 'public/js/templates.js'
+        'loginController': 'public/js/controllers/loginController.js',
+        'registerController': 'public/js/controllers/registerController.js',
     }
 });

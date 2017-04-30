@@ -1,35 +1,38 @@
 import { jquery } from 'jquery';
 
-function request(url, type, options, headers){
-    
-    let promise = new Promise(function (resolve, reject){
-    
+function sendRequest(method, url, body, headers = {}) {
+    return new Promise((resolve, reject) => {
         $.ajax({
-            url: url,
-            type: type,
-            options: options,
-            headers: headers,
-            success: resolve,
-            error: reject
+            url,
+            method,
+            data: body,
+            headers,
+            success(response) {
+                resolve(response);
+            },
+            error(error) {
+                reject(error);
+            }
         });
-
     });
-
-    return promise;
 }
 
-export function getRequest (link){
-    return request(link);
+export function get(url, headers = {}) {
+    headers["content-type"] = "application/json";
+    return sendRequest("GET", url, null, headers);
 }
 
-export function postRequest (link){
-    return request(link, 'POST', {}, {});
+export function putJSON(url, body, headers = {}) {
+    headers["content-type"] = "application/json";
+    return sendRequest("PUT", url, JSON.stringify(body), headers);
 }
 
-export function putRequest (link){
-    return request(link, 'PUT', {}, {});
+export function postJSON(url, body, headers = {}) {
+    headers["content-type"] = "application/json";
+    return sendRequest("POST", url, JSON.stringify(body), headers);
 }
 
-export function deleteRequest (link){
-    return request(link, 'DELETE', {}, {});
+export function getJSON(url, headers = {}) {
+    headers["content-type"] = "application/json";
+    return sendRequest("GET", url, null, headers);
 }

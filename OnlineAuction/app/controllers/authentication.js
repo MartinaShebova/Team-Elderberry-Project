@@ -30,6 +30,7 @@ exports.register = function(req, res, next) {
     const firstName = req.body.firstname;
     const lastName = req.body.lastname;
     const password = req.body.password;
+    const imageUrl = req.body.imageUrl;
 
     // Return error if no email provided
     if (!email) {
@@ -59,7 +60,8 @@ exports.register = function(req, res, next) {
             email,
             password,
             firstName,
-            lastName
+            lastName,
+            imageUrl
         });
 
         user.save((err, user) => {
