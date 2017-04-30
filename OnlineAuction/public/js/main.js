@@ -27,6 +27,12 @@
         .on('FAQ', function () {
             console.log('FAQ');
         })
+        .on('login', function () {
+            console.log('login');
+        })
+        .on('register', function () {
+            console.log('register');
+        })
 
         //When we have user with ID
         .on('/user/:id/:action', function (params) {

@@ -1,305 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Bid-Click-Buy</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bid-Click-Buy</title>
 
-        {{!--Add favicon--}}
-        <link rel="icon" href="/public/images/favicon-16x16.png" type="image/gif" sizes="16x16"> 
-        
-        {{!--Bootstrap--}}
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-            crossorigin="anonymous"> 
-        
-        {{!--Custom css--}}
-        <link rel="stylesheet" href="/public/styles/main.css">
+    {{!--Add favicon--}}
+    <link rel="icon" href="/public/images/favicon-16x16.png" type="image/gif" sizes="16x16"> {{!--Bootstrap--}}
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous"> {{!--Custom css--}}
+    <link rel="stylesheet" href="/public/styles/main.css">
 
-        <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-        
-        {{!--SystemJs--}}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        
-        <script src="libs/systemjs/dist/system.js"></script>
-        <script src="/public/js/systemjs-config.js"></script>
-        
-        {{!--Navigo--}}
-        <script src="libs/navigo/lib/navigo.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"> {{!--SystemJs--}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-        {{!--Custom js--}}
+    <script src="libs/systemjs/dist/system.js"></script>
+    <script src="/public/js/systemjs-config.js"></script>
 
-        {{!--Load custom modules--}}
-        <script>
-            System.import('main');            
-            System.import('bootstrap-js');
-        </script>
-    </head>
+    {{!--Navigo--}}
+    <script src="libs/navigo/lib/navigo.js"></script>
 
-    <body>
-        <div class="container">{{!--main container starts--}}
-            <div class="navbar-wrapper">{{!--nav bar starts--}}
-                    <nav class="navbar navbar-fixed-top">
-                        <div class="container">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-                                    aria-controls="navbar">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                                <div class="navbar-brand">
-                                    <h3 style="display:inline"><a href="/">Bid<span>Click</span>Buy</a></h3>
-                                </div>
-                            </div>
-                            <div id="navbar" class="navbar-collapse">
-                                <ul class="nav navbar-nav">
-                                    <li class="active"><a href="/" class="">Home</a></li>
-                                    <li><a href="#/sell">Sell</a></li>
-                                    <li><a href="#/buy">Buy</a></li>
-                                    <li><a href="#/about">About Us</a></li>
-                                    <li><a href="#/contact">Contact</a></li>
-                                    <li><a href="#/FAQ">FAQ</a></li>
-                                </ul>
-                                <ul class="nav navbar-nav pull-right">
-                                    <li class=" dropdown"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true"
-                                            aria-expanded="false">Signed in as  <span class="caret"></span></a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">Change Password</a></li>
-                                            <li><a href="#">My Profile</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class=""><a href="#">Logout</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </nav>
-            </div>{{!--navbar ends--}}
+    {{!--Custom js--}} {{!--Load custom modules--}}
+    <script>
+        System.import('main');
+        System.import('bootstrap-js');
+    </script>
+</head>
 
-  
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#/">
+                    <label>Bid<span>Click</span>Buy</label>
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="font collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="#/sell">Sell</a>
+                    </li>
+                    <li>
+                        <a href="#/buy">Buy</a>
+                    </li>
+                    <li>
+                        <a href="#/about">About</a>
+                    </li>
+                    <li>
+                        <a href="#/contact">Contact</a>
+                    </li>
+                    <li>
+                        <a href="#/FAQ">FAQ</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 
+    <!-- Page Content -->
+    <div class="container">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-            <div class="row">{{!--change information div depends on route chosen--}}
-                <div class="col-sm-12">
-
-                {{!--Search form--}}
-                <form method="GET"> 
-                <div class="row">
-                    <div class="col-xs-6 col-md-4">
-                    <div class="input-group">
-                <input type="text" class="form-control" placeholder="Buy something cool :)" id="txtSearch"/>
-                <div class="input-group-btn">
-                        <button class="btn btn-info" type="submit">
-                        <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                </div>
-                </div>
-                    </div>
-                </div>
-                </form>
-
-                {{!--Jumbotron with offers--}}
-
-    <div class="row">
-      <div class="col-sm-3">
-        <h2>Heading</h2>
-        <img class="img-responsive img-rounded" src="https://www.w3schools.com/css/img_fjords.jpg" style="width:100%; height: auto"/>
-        <p class="text-justify">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><strong>Start price: </strong><span>10 BGN</span></p>
-        <p><strong>Item Location: </strong><span>Nevada</span></p>
-        <hr />
-        <p><strong>Offer expires at: </strong><span>TO DO CLOCK</span></p>
-        <p><strong>Current best offer: </strong><span>23 BGN</span></p>
-        <p><strong>Bid By: </strong></p>  
-        <span><a class="btn btn-default btn-sm" href="#" role="button">5 BGN</a></span>
-        <span><a class="btn btn-success btn-sm" href="#" role="button">10 BGN</a></span>
-        <span><a class="btn btn-danger btn-sm" href="#" role="button">15 BGN</a></span>
-      </div>
-      <div class="col-md-3">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-      </div>
-      <div class="col-md-3">
-        <h2>Heading</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-      </div>
-      <div class="col-md-3">
-        <h2>Heading</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-      </div>
-    </div>
-
-    <hr>
-
+        <!-- Heading Row -->
         <div class="row">
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-      </div>
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-      </div>
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-      </div>
+            <div class="col-md-9">
+                <section class="section-white">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                        <img src="http://placehold.it/800x400" alt="...">
+                        <div class="carousel-caption">
+                            <h2>Heading</h2>
+                        </div>
+                        </div>
+                        <div class="item">
+                        <img src="http://placehold.it/800x400" alt="...">
+                        <div class="carousel-caption">
+                            <h2>Heading</h2>
+                        </div>
+                        </div>
+                        <div class="item">
+                        <img src="http://placehold.it/800x400" alt="...">
+                        <div class="carousel-caption">
+                            <h2>Heading</h2>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                    </div>
+                </section>
+            </div>
+            <!-- /.col-md-8 -->
+            <div class="col-md-3 text-center">
+                <div class="font">Start selling your stuff now!</div>
+                <br/>
+                <p><a class="btn btn-success btn-lg font" href="#/login">Login</a></p>
+                <p><a class="btn btn-danger btn-lg font" href="#/register">Register</a></p>                
+            </div>
+            <!-- /.col-md-4 -->
+        </div>
+        <!-- /.row -->
+
+        {{!--change information div depends on route chosen--}}
+        <div class="row">
+            <div class="col-sm-12" id="dinamic-container">
+
+            </div>
+        </div>
+        {{!--change information div depends on route chosen END--}}
+
+        <!-- Call to Action Well -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="well text-center">
+                    This is a well that is a great spot for a business tagline or phone number for easy access!
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+        </footer>
+
     </div>
 
+</body>
 
-<form class="well form-horizontal" action=" " method="post" id="contact_form">
-    <fieldset>
-
-        <!-- Form Name -->
-        <legend class="text-center" style="font: normal 36px 'Cookie', cursive;">Earn money by selling unnecessary stuff!</legend>
-
-        <!-- Text input-->
-
-        <div class="form-group">
-            <label class="col-md-4 control-label">Title</label>
-            <div class="col-md-4 inputGroupContainer">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                    <input class="form-control" type="text">
-                </div>
-            </div>
-        </div>
-
-        <!-- Select Basic -->
-
-        <div class="form-group">
-            <label class="col-md-4 control-label">Category</label>
-            <div class="col-md-4 selectContainer">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                    <select class="form-control selectpicker">
-                                <option value=" " >Select Category</option>
-                                <option>PC/Laptop/Accessories</option>
-                                <option>Phones/Accessories</option>
-                                <option >TV/Accessories</option>
-                                <option >Clothes</option>
-                                <option >Toys</option>
-                                <option >Antiques</option>
-                                <option >Books</option>
-                                <option >Tickets</option>
-                                <option >Other</option>
-                            </select>
-                </div>
-            </div>
-        </div>
-
-        <!-- Text input-->
-
-        <div class="form-group">
-            <label class="col-md-4 control-label">Description</label>
-            <div class="col-md-4 inputGroupContainer">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-blackboard"></i></span>
-                    <textarea class="form-control"></textarea>
-                </div>
-            </div>
-        </div>
-
-        <!-- Text input-->
-
-        <div class="form-group">
-            <label class="col-md-4 control-label">Item Location</label>
-            <div class="col-md-4 inputGroupContainer">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                    <input class="form-control" type="text">
-                </div>
-            </div>
-        </div>
-
-        <!-- Text input-->
-        <div class="form-group">
-            <label class="col-md-4 control-label">Start Price</label>
-            <div class="col-md-4 inputGroupContainer">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-star"></i></span>
-                    <input class="form-control" type="text">
-                </div>
-            </div>
-        </div>
-
-        <!-- Text input-->
-        <div class="form-group">
-            <label class="col-md-4 control-label">Upload Picture</label>
-            <div class="col-md-4 inputGroupContainer">
-                <div class="input-group">
-                    <label class="btn btn-default btn-file">
-                        Browse from PC <input type="file" style="display: none;">
-                    </label>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- Button -->
-        <div class="form-group">
-            <label class="col-md-4 control-label"></label>
-            <div class="col-md-4">
-                <button type="submit" class="btn btn-info">Send <span class="glyphicon glyphicon-send"></span></button>
-            </div>
-        </div>
-
-    </fieldset>
-</form>
-
-
-
-
-
-
-
-
-                    {{!--Call some template from templates folder--}}
-                </div>
-            </div>{{!--change information div depends on route chosen END--}}
-
-            <footer class="footer-distributed">
-                <div class="footer-left">
-                    <h3>Bid<span>Click</span>Buy</h3>
-                    <p class="footer-company-name">Team Elderberry &copy; 2017</p>
-                </div>
-                <div class="footer-right">
-                    <p class="footer-company-about">
-                        <span>Like us</span>
-                    </p>
-                    <div class="footer-icons">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                        <a href="#"><i class="fa fa-github"></i></a>
-                    </div>
-                </div>
-            </footer>
-        </div> {{!--contant main container ends--}}
-    </body>
 </html>
