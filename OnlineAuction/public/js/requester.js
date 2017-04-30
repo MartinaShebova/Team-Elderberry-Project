@@ -18,27 +18,18 @@ function request(url, type, options, headers){
     return promise;
 }
 
-function getRequest (link){
-    return request(link, 'GET', {}, {});
+export function getRequest (link){
+    return request(link);
 }
 
-function postRequest (link){
+export function postRequest (link){
     return request(link, 'POST', {}, {});
 }
 
-function putRequest (link){
+export function putRequest (link){
     return request(link, 'PUT', {}, {});
 }
 
-function deleteRequest (link){
+export function deleteRequest (link){
     return request(link, 'DELETE', {}, {});
 }
-
-let requests = {
-    getRequest: getRequest,
-    postRequest: postRequest,
-    putRequest: putRequest,
-    deleteRequest: deleteRequest
-};
-
-export { requests };

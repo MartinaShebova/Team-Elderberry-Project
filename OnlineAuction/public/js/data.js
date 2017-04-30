@@ -1,5 +1,5 @@
-import { requests } from 'requests';
+import * as requester from 'requests';
 
 function getUsers(){
-    return requests.getRequest('/');
+    return requester.getRequest('/');
 }

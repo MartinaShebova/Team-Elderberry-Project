@@ -1,37 +1,42 @@
 /*globals Navigo */
+import homeController from 'homeController';
+import { renderFormAndSubmit } from 'loginRegisterController';
 
 (function routing (){
 
-    let router = new Navigo(null, false);
+    let router = new Navigo('/', true);
 
     router
-        .on(function () {
-            console.log('root');
-        })
-        .on('sell', function () {
-            console.log('sell');
+        .on('/', function(){
+            console.log('/home');
         })
 
-        .on('buy', function () {
-            console.log('buy');
+        .on('/sell', function () {
+            console.log('/sell');
         })
 
-        .on('about', function () {
-            console.log('about');
+        .on('/buy', function () {
+            console.log('/buy');
         })
 
-        .on('contact', function () {
-            console.log('contact');
+        .on('/about', function () {
+            console.log('/about');
         })
 
-        .on('FAQ', function () {
-            console.log('FAQ');
+        .on('/contact', function () {
+            console.log('/contact');
         })
-        .on('login', function () {
-            console.log('login');
+
+        .on('/FAQ', function () {
+            console.log('/FAQ');
         })
-        .on('register', function () {
-            console.log('register');
+        .on('/login', function () {
+            console.log('/login');
+            renderFormAndSubmit();
+        })
+        .on('/register', function () {
+            console.log('/reg');
+            
         })
 
         //When we have user with ID

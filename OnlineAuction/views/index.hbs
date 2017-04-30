@@ -23,6 +23,9 @@
     {{!--Navigo--}}
     <script src="libs/navigo/lib/navigo.js"></script>
 
+    {{!--Handlebars--}}
+    <script src="libs/handlebars/dist/handlebars.js"></script>
+
     {{!--Custom js--}} {{!--Load custom modules--}}
     <script>
         System.import('main');
@@ -76,9 +79,19 @@
     <!-- Page Content -->
     <div class="container">
 
+        {{!--change information div depends on route chosen--}}
+        {{!--<div class="row">
+            <div class="col-sm-12" id="dinamic-container">
+
+            </div>
+        </div>--}}
+        {{!--change information div depends on route chosen END--}}
+
+
+
         <!-- Heading Row -->
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-9" id="dinamic-container">
                 <section class="section-white">
                     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
@@ -123,20 +136,12 @@
             <div class="col-md-3 text-center">
                 <div class="font">Start selling your stuff now!</div>
                 <br/>
-                <p><a class="btn btn-success btn-lg font" href="#/login">Login</a></p>
-                <p><a class="btn btn-danger btn-lg font" href="#/register">Register</a></p>                
+                <p id="login-clicked"><a class="btn btn-success btn-lg font" href="#/login">Login</a></p>
+                <p id="register-clicked"><a class="btn btn-danger btn-lg font" href="#/register">Register</a></p>                
             </div>
             <!-- /.col-md-4 -->
         </div>
         <!-- /.row -->
-
-        {{!--change information div depends on route chosen--}}
-        <div class="row">
-            <div class="col-sm-12" id="dinamic-container">
-
-            </div>
-        </div>
-        {{!--change information div depends on route chosen END--}}
 
         <!-- Call to Action Well -->
         <div class="row">

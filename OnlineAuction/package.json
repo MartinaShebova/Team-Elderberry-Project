@@ -23,7 +23,7 @@
     "crypto": "0.0.3",
     "express": "^4.15.2",
     "express-handlebars": "^3.0.0",
-    "google-maps": "^3.2.1",
+    "handlebars": "^4.0.7",
     "jsonwebtoken": "^7.3.0",
     "mongoose": "^4.9.5",
     "morgan": "^1.8.1",
