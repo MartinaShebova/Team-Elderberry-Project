@@ -48,7 +48,7 @@ footer {
 /* ------------------- Carousel Styling ------------------- */
 
 .carousel-inner {
-  border-radius: 15px;
+  border-radius: 5px;
 }
 
 .carousel-caption {
@@ -202,4 +202,7 @@ footer {
 
 .footer-label{
   margin: 10px;
+}
+.img-circle{
+    margin: 0 auto;
 }

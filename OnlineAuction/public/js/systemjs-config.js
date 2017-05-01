@@ -23,6 +23,7 @@ System.config({
         'buyController': 'public/js/controllers/buyController.js',
         'aboutController': 'public/js/controllers/aboutController.js',
         'contactController': 'public/js/controllers/contactController.js',
-        'faqController': 'public/js/controllers/faqController.js'  
+        'faqController': 'public/js/controllers/faqController.js',
+        'accordion': 'public/js/a.js'
     }
 });
