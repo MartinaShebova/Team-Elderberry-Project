@@ -1,11 +1,11 @@
 import * as requester from 'requester';
 
 export function register(user) {
-    return requester.postJSON("/api/auth/register", user)
+    return requester.postJSON("/api/auth/register", user);
 }
 
 export function login(user) {
-    return requester.postJSON("/api/auth/login", user)
+    return requester.postJSON("/api/auth/login", user);
 }
 
 export function logout() {

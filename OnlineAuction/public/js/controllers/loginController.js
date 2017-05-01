@@ -6,30 +6,31 @@ export function login() {
 
     getTemplate('login')
         .then((templateFunc) => {
-            let html = templateFunc()
+            //Render template
+            let html = templateFunc();
 
             $('#dinamic-container').html(html);
 
+            //Login functionality
             $("#btn-login").on("click", (ev) => {
 
                 let user = {
                     email: $("#email").val(),
                     password: $("#password").val(),
-                }
+                };
 
                 data.login(user)
 
                 .then((resp) => {
-                    console.log(resp);
+                    // console.log(resp);
                     localStorage.setItem("email", resp.user.email);
                     localStorage.setItem("authKey", resp.token);
                     $(document.body).addClass("logged-in");
                     document.location = "/";
-                })
+                });
+
                 ev.preventDefault();
                 return false;
             });
-
         });
-
 }
