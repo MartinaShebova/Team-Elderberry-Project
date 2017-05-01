@@ -2,6 +2,11 @@
 import homeController from 'homeController';
 import { login } from 'loginController';
 import { register } from 'registerController';
+import { sell } from 'sellController';
+import { buy } from 'buyController';
+import { about } from 'aboutController';
+import { contact } from 'contactController';
+import { faq } from 'faqController';
 
 (function routing() {
 
@@ -12,25 +17,15 @@ import { register } from 'registerController';
             console.log('/home');
         })
 
-    .on('/sell', function() {
-        console.log('/sell');
-    })
+    .on('/sell', sell)
 
-    .on('/buy', function() {
-        console.log('/buy');
-    })
+    .on('/buy', buy)
 
-    .on('/about', function() {
-        console.log('/about');
-    })
+    .on('/about', about)
 
-    .on('/contact', function() {
-        console.log('/contact');
-    })
+    .on('/contact', contact)
 
-    .on('/FAQ', function() {
-        console.log('/FAQ');
-    })
+    .on('/FAQ', faq)
 
     .on('/login', login)
 

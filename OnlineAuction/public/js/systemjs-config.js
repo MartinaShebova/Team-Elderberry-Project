@@ -20,5 +20,9 @@ System.config({
         'sellController': 'public/js/controllers/sellController.js',
         'loginController': 'public/js/controllers/loginController.js',
         'registerController': 'public/js/controllers/registerController.js',
+        'buyController': 'public/js/controllers/buyController.js',
+        'aboutController': 'public/js/controllers/aboutController.js',
+        'contactController': 'public/js/controllers/contactController.js',
+        'faqController': 'public/js/controllers/faqController.js'  
     }
 });

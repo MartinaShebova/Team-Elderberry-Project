@@ -2,9 +2,9 @@ import { jquery } from 'jquery';
 import { getTemplate } from 'templateGenerator';
 import * as data from 'data';
 
-export function sell() {
+export function buy() {
     if(data.isLoggedIn()){
-            getTemplate('sell')
+            getTemplate('buy')
             .then((templateFunc) => {
                 //Render template
                 let html = templateFunc();
