@@ -2,6 +2,7 @@
 
 const AuthenticationController = require('./app/controllers/authentication');
 const UserController = require('./app/controllers/user');
+const SellController = require('./app/controllers/sellController')
 const express = require('express');
 const passport = require('passport');
 
@@ -12,12 +13,14 @@ const requireLogin = passport.authenticate('local', { session: false });
 
 module.exports = function(app) {
     const apiRoutes = express.Router(),
-          authRoutes = express.Router(),
-          userRoutes = express.Router();
+        authRoutes = express.Router(),
+        userRoutes = express.Router(),
+        sellRoutes = express.Router();
+
 
 
     // Set auth routes as subgroup/middleware to apiRoutes
-    apiRoutes.use('/auth', authRoutes); 
+    apiRoutes.use('/auth', authRoutes);
 
     // Registration route
     authRoutes.post('/register', AuthenticationController.register);
@@ -29,6 +32,11 @@ module.exports = function(app) {
 
     // View user profile route
     userRoutes.get('/:userId', requireAuth, UserController.viewProfile);
+
+    // Set user routes as a subgroup/middleware to apiRoutes
+    apiRoutes.use('/sells', sellRoutes);
+
+    sellRoutes.post('/create', requireAuth, SellController.createSell)
 
     app.use('/api', apiRoutes);
 };

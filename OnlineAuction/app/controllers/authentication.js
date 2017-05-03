@@ -9,7 +9,7 @@ const setUserInfo = require('../../helpers').setUserInfo;
 // Generate JWT
 function generateToken(user) {
     return jwt.sign(user, config.secret, {
-        expiresIn: 604800 // in seconds
+        expiresIn: "30d"
     });
 }
 
