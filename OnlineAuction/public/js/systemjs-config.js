@@ -8,8 +8,8 @@ System.config({
         'systemjs-babel-build': 'libs/systemjs-plugin-babel/systemjs-babel-browser.js',
 
         // External Libraries
-        'jquery': '/bower/jquery/dist/jquery.js',
-        'bootstrap-js': '/libs/bootstrap/dist/js/bootstrap.min.js',
+        'jquery': 'libs/jquery/dist/jquery.min.js',
+        'bootstrap-js': 'libs/bootstrap/dist/js/bootstrap.min.js',
 
         // App files
         'main': 'public/js/main.js',
