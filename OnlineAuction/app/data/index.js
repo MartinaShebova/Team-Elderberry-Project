@@ -7,8 +7,10 @@ const User = require('../models/user'),
 mongoose.Promise = global.Promise;
 
 exports.createSell = function(sell, owner) {
-    let today = Date.now();
-    let tomorrow = today;
+    let today = new Date();
+    console.log(today);
+    let tomorrow = today.setHours(today.getHours() + 24);
+    console.log(tomorrow);
 
     const newSell = {
         title: sell.title,
@@ -36,6 +38,18 @@ exports.createSell = function(sell, owner) {
             }
 
             return resolve(sell);
+        });
+    });
+}
+
+exports.getAllBooks = function() {
+    return new Promise((resolve, reject) => {
+        Sell.find({}).sort({ createdAt: -1 }).exec((err, sells) => {
+            if (err) {
+                return reject(err);
+            }
+
+            return resolve(sells);
         });
     });
 }
