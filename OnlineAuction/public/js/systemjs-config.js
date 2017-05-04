@@ -24,6 +24,7 @@ System.config({
         'aboutController': 'public/js/controllers/aboutController.js',
         'contactController': 'public/js/controllers/contactController.js',
         'faqController': 'public/js/controllers/faqController.js',
-        'accordion': 'public/js/a.js'
+        'accordion': 'public/js/a.js',
+        'profileController': 'public/js/controllers/profileController.js',
     }
 });

@@ -7,6 +7,7 @@ import { buy } from 'buyController';
 import { about } from 'aboutController';
 import { contact } from 'contactController';
 import { faq } from 'faqController';
+import { profile } from 'profileController';
 
 (function routing() {
 
@@ -30,6 +31,8 @@ import { faq } from 'faqController';
     .on('/login', login)
 
     .on('/register', register)
+
+    .on('/profile', profile)    
 
     //When we have user with ID
     .on('/user/:id/:action', function(params) {

@@ -118,6 +118,9 @@ footer {
 #logout-clicked .btn-default{
   background-color: #9D9D9D;
 }
+#profile-clicked .btn-default{
+  background-color: #9D9D9D;
+}
 
 #btn-login .btn-default{
   background-color: #CCCC00;
