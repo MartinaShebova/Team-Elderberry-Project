@@ -38,3 +38,12 @@ exports.createSell = function(req, res) {
             res.status(500).json(error);
         });
 }
+
+exports.getSells = function(req, res) {
+    data.getAllBooks()
+        .then(sells => res.status(200).json(sells))
+        .catch(error => {
+            console.log(error);
+            res.status(500).json(error);
+        });
+}

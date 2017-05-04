@@ -36,6 +36,8 @@ module.exports = function(app) {
     // Set user routes as a subgroup/middleware to apiRoutes
     apiRoutes.use('/sells', sellRoutes);
 
+    sellRoutes.use('/', SellController.getSells);
+
     sellRoutes.post('/create', requireAuth, SellController.createSell)
 
     app.use('/api', apiRoutes);
