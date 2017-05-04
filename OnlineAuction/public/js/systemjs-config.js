@@ -8,8 +8,9 @@ System.config({
         'systemjs-babel-build': 'libs/systemjs-plugin-babel/systemjs-babel-browser.js',
 
         // External Libraries
-        'jquery': '/bower/jquery/dist/jquery.js',
-        'bootstrap-js': '/libs/bootstrap/dist/js/bootstrap.min.js',
+        'jquery': 'libs/jquery/dist/jquery.min.js',
+        'bootstrap-js': 'libs/bootstrap/dist/js/bootstrap.min.js',
+        'jqueryUI': 'public/libs/jquery-ui.min.js', // Could not load it from node_modules
 
         // App files
         'main': 'public/js/main.js',
@@ -24,6 +25,6 @@ System.config({
         'aboutController': 'public/js/controllers/aboutController.js',
         'contactController': 'public/js/controllers/contactController.js',
         'faqController': 'public/js/controllers/faqController.js',
-        'accordion': 'public/js/a.js'
+        'profileController': 'public/js/controllers/profileController.js',
     }
 });

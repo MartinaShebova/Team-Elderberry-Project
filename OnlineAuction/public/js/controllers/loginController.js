@@ -2,6 +2,7 @@ import { jquery } from 'jquery';
 import { getTemplate } from 'templateGenerator';
 import * as data from 'data';
 
+
 export function login() {
 
     getTemplate('login')
@@ -22,11 +23,11 @@ export function login() {
                 data.login(user)
 
                 .then((resp) => {
-                    // console.log(resp);
                     localStorage.setItem("email", resp.user.email);
                     localStorage.setItem("authKey", resp.token);
                     $(document.body).addClass("logged-in");
-                    document.location = "/";
+
+                    document.location = "/";//NOOO
                 });
 
                 ev.preventDefault();

@@ -1,5 +1,5 @@
 /*globals Navigo */
-import homeController from 'homeController';
+import { homeController } from 'homeController';
 import { login } from 'loginController';
 import { register } from 'registerController';
 import { sell } from 'sellController';
@@ -7,6 +7,7 @@ import { buy } from 'buyController';
 import { about } from 'aboutController';
 import { contact } from 'contactController';
 import { faq } from 'faqController';
+import { profile } from 'profileController';
 
 (function routing() {
 
@@ -31,6 +32,8 @@ import { faq } from 'faqController';
 
     .on('/register', register)
 
+    .on('/profile', profile)    
+
     //When we have user with ID
     .on('/user/:id/:action', function(params) {
         // If we have http://site.com/user/42/save as a url then
@@ -52,5 +55,4 @@ import { faq } from 'faqController';
     router.notFound(function(query) {
         // ...
     });
-
 }());
