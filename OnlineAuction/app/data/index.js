@@ -53,3 +53,15 @@ exports.getAllBooks = function() {
         });
     });
 }
+
+exports.sellById = function(sellId) {
+    return new Promise((resolve, reject) => {
+        Sell.findById(sellId, (err, sell) => {
+            if (err) {
+                return reject(err);
+            }
+
+            return resolve(sell);
+        });
+    });
+}

@@ -47,3 +47,15 @@ exports.getSells = function(req, res) {
             res.status(500).json(error);
         });
 }
+exports.sellById = function(req, res) {
+    data.sellById(req.params.sellId)
+        .then(sell => {
+            if (!sell) {
+                res.status(404).json({ message: 'No sell with such id!' });
+                return;
+            }
+            res.status(200).json(sell)
+
+        })
+        .catch(error => res.status(500).json(error));
+}
