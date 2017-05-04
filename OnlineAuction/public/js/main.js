@@ -1,5 +1,5 @@
 /*globals Navigo */
-import homeController from 'homeController';
+import { homeController } from 'homeController';
 import { login } from 'loginController';
 import { register } from 'registerController';
 import { sell } from 'sellController';
@@ -55,5 +55,4 @@ import { profile } from 'profileController';
     router.notFound(function(query) {
         // ...
     });
-
 }());
