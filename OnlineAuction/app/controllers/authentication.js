@@ -31,6 +31,8 @@ exports.register = function(req, res, next) {
     const lastName = req.body.lastname;
     const password = req.body.password;
     const imageUrl = req.body.imageUrl;
+    const mobileNumber = req.body.mobileNumber;
+    const address = req.body.address;
 
     // Return error if no email provided
     if (!email) {
@@ -39,7 +41,7 @@ exports.register = function(req, res, next) {
 
     // Return error if full name not provided
     if (!firstName || !lastName) {
-        return res.status(422).send({ error: 'You must enter your full name.' });
+        return res.status(422).send({ error: 'You must enter your names.' });
     }
 
     // Return error if no password provided
@@ -61,7 +63,9 @@ exports.register = function(req, res, next) {
             password,
             firstName,
             lastName,
-            imageUrl
+            imageUrl,
+            mobileNumber,
+            address
         });
 
         user.save((err, user) => {

@@ -5,9 +5,12 @@ const ROLE_ADMIN = require('./constants').ROLE_ADMIN;
 exports.setUserInfo = function setUserInfo(request) {
     const getUserInfo = {
         _id: request._id,
+        email: request.email,
         firstname: request.firstname,
         lastname: request.lastname,
-        email: request.email,
+        imageUrl: request.imageUrl,
+        mobileNumber: request.mobileNumber,
+        address: request.address,
         role: request.role
     };
 

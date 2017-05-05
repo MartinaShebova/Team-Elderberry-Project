@@ -23,13 +23,17 @@ const UserSchema = new mongoose.Schema({
     imageUrl: {
         type: String,
     },
+    mobileNumber: {
+        type: String,
+    },
+    address: {
+        type: String,
+    },
     role: {
         type: String,
         enum: ['Standart', 'Admin'],
         default: 'Standart'
-    },
-    resetPasswordToken: { type: String },
-    resetPasswordExpires: { type: Date }
+    }
 });
 
 // Saves the user's password hashed
