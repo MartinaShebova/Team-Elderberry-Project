@@ -27,7 +27,7 @@ export function login() {
                     localStorage.setItem("authKey", resp.token);
                     $(document.body).addClass("logged-in");
 
-                    document.location = "/";//NOOO
+                    // router.navigate('/');?????????
                 });
 
                 ev.preventDefault();
