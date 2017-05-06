@@ -18,10 +18,9 @@ export function register() {
                     lastname: $("#lastname").val(),
                     imageUrl: $("#image-url").val(),
                 };
+                
                 data.register(user)
-
                 .then((resp) => {
-                        console.log(resp);
                         return data.login(user);
                     })
                     .then((resp) => {

@@ -8,7 +8,6 @@ export function buy() {
         .then((templateFunc) => {
             data.getAds()
                 .then(function (adsData) {
-                    console.log(adsData);
                     let html = templateFunc(adsData);
                     $('#dinamic-container').html(html);
 

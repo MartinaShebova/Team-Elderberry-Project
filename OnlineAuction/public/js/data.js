@@ -22,6 +22,10 @@ export function getAds(){
      return requester.getJSON("/api/sells");
 }
 
+export function getUserInfo(){
+     return requester.getJSON("/api/user");//?????
+}
+
 export function isLoggedIn() {
     return !!localStorage.getItem('authKey');
 }
