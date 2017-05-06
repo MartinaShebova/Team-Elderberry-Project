@@ -12,11 +12,10 @@ export function logout() {
 
 }
 
+export function createSell(adInfo){
+     return requester.postJSON("/api/sells/create", adInfo);
+}
+
 export function isLoggedIn() {
-    return Promise.resolve()
-        .then(() => {
-            let email = localStorage.getItem("email");
-            console.log(email);
-            return email;
-        });
+    return !!localStorage.getItem('authKey');
 }

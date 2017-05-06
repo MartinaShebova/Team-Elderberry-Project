@@ -1,4 +1,5 @@
 import { jquery } from 'jquery';
+import { authKey } from 'loginController';
 
 function sendRequest(method, url, body, headers = {}) {
     return new Promise((resolve, reject) => {
@@ -28,7 +29,11 @@ export function putJSON(url, body, headers = {}) {
 }
 
 export function postJSON(url, body, headers = {}) {
-    headers["content-type"] = "application/json";
+    headers = {
+        'Authorization': localStorage.getItem('authKey'),
+        'content-type': 'application/json'
+    };
+
     return sendRequest("POST", url, JSON.stringify(body), headers);
 }
 

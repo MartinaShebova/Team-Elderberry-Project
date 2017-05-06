@@ -1,4 +1,4 @@
-<form class="well form-horizontal" action=" " method="post" id="contact_form">
+<form class="well form-horizontal" method="post" id="contact-form">
     <fieldset>
         <!-- Form Name -->
         <legend class="text-center" style="font: normal 36px 'Cookie', cursive;">Earn money by selling unnecessary stuff!</legend>
@@ -10,7 +10,7 @@
             <div class="col-md-4 inputGroupContainer">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                    <input class="form-control" type="text" required="required">
+                    <input class="form-control" id="adTitle" type="text" required="required">
                 </div>
             </div>
         </div>
@@ -22,7 +22,7 @@
             <div class="col-md-4 selectContainer">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                    <select class="form-control selectpicker" required="required">
+                    <select class="form-control selectpicker" id="adCategory" required="required">
                                 <option value=" " >Select Category</option>
                                 <option>PC/Laptop/Accessories</option>
                                 <option>Phones/Accessories</option>
@@ -45,7 +45,17 @@
             <div class="col-md-4 inputGroupContainer">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-blackboard"></i></span>
-                    <textarea class="form-control"></textarea>
+                    <textarea class="form-control" id="adDescription"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label">Image URL</label>
+            <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-camera"></i></span>
+                    <input class="form-control" id="adURL" type="text">
                 </div>
             </div>
         </div>
@@ -56,29 +66,26 @@
             <div class="col-md-4 inputGroupContainer">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-star"></i></span>
-                    <input class="form-control" type="text">
+                    <input class="form-control" id="adStartPrice" type="text">
                 </div>
             </div>
         </div>
-
-        <div class="form-group">
-            <label class="col-md-4 control-label">Image URL</label>
-            <div class="col-md-4 inputGroupContainer">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-camera"></i></span>
-                    <input class="form-control" type="text">
-                </div>
-            </div>
-        </div>
-
 
         <!-- Button -->
         <div class="form-group">
             <label class="col-md-4 control-label"></label>
             <div class="col-md-4">
-                <button type="submit" class="btn btn-info">Send <span class="glyphicon glyphicon-send"></span></button>
+                <button id="createAd" type="submit" class="btn btn-info">Send <span class="glyphicon glyphicon-send"></span></button>
             </div>
         </div>
-
     </fieldset>
 </form>
+<div id="dialog-message" title="Download complete" class="hidden">
+  <p>
+    <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+    Your files have downloaded successfully into the My Downloads folder.
+  </p>
+  <p>
+    Currently using <b>36% of your storage space</b>.
+  </p>
+</div>

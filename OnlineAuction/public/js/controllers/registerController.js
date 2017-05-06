@@ -6,7 +6,7 @@ export function register() {
 
     getTemplate('register')
         .then((templateFunc) => {
-            let html = templateFunc()
+            let html = templateFunc();
 
             $('#dinamic-container').html(html);
 
@@ -17,8 +17,7 @@ export function register() {
                     firstname: $("#firstname").val(),
                     lastname: $("#lastname").val(),
                     imageUrl: $("#image-url").val(),
-                }
-                console.log(user);
+                };
                 data.register(user)
 
                 .then((resp) => {
@@ -30,7 +29,7 @@ export function register() {
                         localStorage.setItem("authKey", resp.token);
                         $(document.body).addClass("logged-in");
                         document.location = "#/";
-                    })
+                    });
                 ev.preventDefault();
                 return false;
             });

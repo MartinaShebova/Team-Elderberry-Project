@@ -1,6 +1,6 @@
 const Sell = require('../models/sell'),
     User = require('../models/user'),
-    data = require('../data/index.js')
+    data = require('../data/index.js');
 
 exports.createSell = function(req, res) {
     const owner = req.user,
@@ -54,7 +54,7 @@ exports.sellById = function(req, res) {
                 res.status(404).json({ message: 'No sell with such id!' });
                 return;
             }
-            res.status(200).json(sell)
+            res.status(200).json(sell);
 
         })
         .catch(error => res.status(500).json(error));
