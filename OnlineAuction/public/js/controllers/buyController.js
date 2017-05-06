@@ -5,12 +5,16 @@ import * as data from 'data';
 export function buy() {
 
     getTemplate('buy')
-    .then((templateFunc) => {
-        //Render template
-        let html = templateFunc();
-        $('#dinamic-container').html(html);
+        .then((templateFunc) => {
+            data.getAds()
+                .then(function (adsData) {
+                    console.log(adsData);
+                    let html = templateFunc(adsData);
+                    $('#dinamic-container').html(html);
 
-        
-    });
+                }, function (error) {
+
+                });
+        });
 
 }

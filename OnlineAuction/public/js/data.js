@@ -16,6 +16,12 @@ export function createSell(adInfo){
      return requester.postJSON("/api/sells/create", adInfo);
 }
 
+//Get info
+
+export function getAds(){
+     return requester.getJSON("/api/sells");
+}
+
 export function isLoggedIn() {
     return !!localStorage.getItem('authKey');
 }

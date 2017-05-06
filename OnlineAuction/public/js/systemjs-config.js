@@ -17,6 +17,7 @@ System.config({
         'requester': 'public/js/requester.js',
         'templateGenerator': 'public/js/templates.js',
         'data': 'public/js/data.js',
+        //App Controllers
         'homeController': 'public/js/controllers/homeController.js',
         'sellController': 'public/js/controllers/sellController.js',
         'loginController': 'public/js/controllers/loginController.js',
@@ -26,5 +27,9 @@ System.config({
         'contactController': 'public/js/controllers/contactController.js',
         'faqController': 'public/js/controllers/faqController.js',
         'profileController': 'public/js/controllers/profileController.js',
+
+        //App models
+        'createAdModel': 'public/js/models/CreateAdModel.js',
+        'validator': 'public/js/validations/Validator.js'
     }
 });
