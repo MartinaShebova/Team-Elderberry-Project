@@ -1,5 +1,5 @@
 /*globals Navigo */
-import { homeController } from 'homeController';
+import { home } from 'homeController';
 import { login } from 'loginController';
 import { register } from 'registerController';
 import { sell } from 'sellController';
@@ -11,48 +11,49 @@ import { profile } from 'profileController';
 
 (function routing() {
 
-    let router = new Navigo('/', true);
+    let router = new Navigo(null, true);
 
     router
-        .on('/', function() {
-            console.log('/home');
+
+        .on(function () {
+            home();
         })
 
-    .on('/sell', sell)
+        .on('/sell', sell)
 
-    .on('/buy', buy)
+        .on('/buy', buy)
 
-    .on('/about', about)
+        .on('/about', about)
 
-    .on('/contact', contact)
+        .on('/contact', contact)
 
-    .on('/FAQ', faq)
+        .on('/FAQ', faq)
 
-    .on('/login', login)
+        .on('/login', login)
 
-    .on('/register', register)
+        .on('/register', register)
 
-    .on('/profile', profile)    
+        .on('/profile', profile)
 
-    //When we have user with ID
-    .on('/user/:id/:action', function(params) {
-        // If we have http://site.com/user/42/save as a url then
-        // params.id = 42
-        // params.action = save
-    })
+        //When we have user with ID
+        .on('/user/:id/:action', function (params) {
+            // If we have http://site.com/user/42/save as a url then
+            // params.id = 42
+            // params.action = save
+        })
 
-    //GET Request
-    .on('/user/:id/:action', function(params, query) {
-        // If we have http://site.com/user/42/save?answer=42 as a url then
-        // params.id = 42
-        // params.action = save
-        // query = answer=42
-    })
+        //GET Request
+        .on('/user/:id/:action', function (params, query) {
+            // If we have http://site.com/user/42/save?answer=42 as a url then
+            // params.id = 42
+            // params.action = save
+            // query = answer=42
+        })
 
-    .resolve();
+        .resolve();
 
     //Not found
-    router.notFound(function(query) {
+    router.notFound(function (query) {
         // ...
     });
 }());

@@ -19,9 +19,7 @@ body {
 .navbar-brand label span{
 	color: #CCCC00;
 }
-footer {
-    padding: 30px 0;
-}
+
 
 @media(min-width:768px) {
     body {
@@ -130,23 +128,49 @@ footer {
 }
 
 
-/*footer*/
+
+.img-circle{
+    margin: 0 auto;
+}
+
+
 #myFooter {
-    background-color: #222222;
+    background-color: #3c3d41;
     color: white;
+    padding-top: 30px;
     border-radius: 5px;
-    height: 150px;
+    flex: 0 0 auto;
+    -webkit-flex: 0 0 auto;
+    margin-top: 10px;
 }
 
 #myFooter .footer-copyright {
+    padding-top: 3px;
+    padding-bottom: 3px;
     text-align: center;
 }
 
 #myFooter .footer-copyright p {
     margin: 10px;
-    color: #9D9D9D;
+    color: #ccc;
 }
 
+#myFooter ul {
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 1.7;
+}
+
+#myFooter a {
+    color: #d2d1d1;
+    text-decoration: none;
+}
+
+#myFooter a:hover,
+#myFooter a:focus {
+    text-decoration: none;
+    color: white;
+}
 
 #myFooter .social-networks {
     text-align: center;
@@ -155,8 +179,8 @@ footer {
 }
 
 #myFooter .social-networks a {
-    font-size: 28px;
-    color: white;
+    font-size: 32px;
+    color: #f9f9f9;
     padding: 10px;
     transition: 0.2s;
 }
@@ -180,13 +204,13 @@ footer {
 #myFooter .btn {
     color: white;
     background-color: #CCCC00;
-    border-radius: 10px;
+    border-radius: 20px;
     border: none;
     width: 150px;
     display: block;
     margin: 0 auto;
     margin-top: 10px;
-    line-height: 10px;
+    line-height: 15px;
 }
 
 @media screen and (max-width: 767px) {
@@ -195,17 +219,3 @@ footer {
     }
 }
 
-#myFooter{
-   flex: 0 0 auto;
-   -webkit-flex: 0 0 auto;
-}
-.font span{
-  color: #CCCC00;
-}
-
-.footer-label{
-  margin: 10px;
-}
-.img-circle{
-    margin: 0 auto;
-}
