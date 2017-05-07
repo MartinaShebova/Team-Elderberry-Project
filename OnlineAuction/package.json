@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Team work for JavaScript Applications Course 2017, Team Elderberry",
   "main": "index.js",
+  "engines":{
+    "node": "6.9.x",
+    "npm": "3.10.x"
+  },
   "scripts": {
     "dev": "./node_modules/.bin/nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"

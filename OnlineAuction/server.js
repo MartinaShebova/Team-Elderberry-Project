@@ -10,7 +10,9 @@ const express = require('express'),
     config = require('./config/main'),
     exphbs = require('express-handlebars');
 
-const port = parseInt(process.env.PORT, 10) || config.port;
+
+// const port = parseInt(process.env.PORT, 10) || config.port;
+const port = process.env.PORT || config.port;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
