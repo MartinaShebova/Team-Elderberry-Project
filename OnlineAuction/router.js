@@ -31,7 +31,7 @@ module.exports = function(app) {
     apiRoutes.use('/user', userRoutes);
 
     // View user profile route
-    userRoutes.get('/:userId', requireAuth, UserController.viewProfile);
+    userRoutes.get('/:email', requireAuth, UserController.viewProfile);
 
     // Set user routes as a subgroup/middleware to apiRoutes
     apiRoutes.use('/sells', sellRoutes);

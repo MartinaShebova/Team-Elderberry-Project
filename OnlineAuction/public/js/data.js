@@ -1,5 +1,6 @@
 import * as requester from 'requester';
 
+//users data 
 export function register(user) {
     return requester.postJSON("/api/auth/register", user);
 }
@@ -16,21 +17,24 @@ export function logout() {
     });
 }
 
-export function createSell(adInfo) {
-    return requester.postJSON("/api/sells/create", adInfo);
+export function getUserInfo(email) {
+    return requester.getJSON(`/api/user/${email}`);
 }
 
-//Get info
-
-export function getAds() {
-    return requester.getJSON("/api/sells");
-}
-
-export function getUserInfo(userId) {
-    return requester.getJSON("/api/user/" + userId);
-}
 
 export function isLoggedIn() {
     return !!localStorage.getItem('email') &&
         !!localStorage.getItem('authKey');
+}
+
+//sells data
+
+export function createSell(adInfo) {
+    console.log(adInfo);
+    debugger
+    return requester.postJSON("/api/sells/create", adInfo);
+}
+
+export function getAds() {
+    return requester.getJSON("/api/sells");
 }

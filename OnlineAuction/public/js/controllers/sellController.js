@@ -13,7 +13,7 @@ export function sell() {
                 let html = templateFunc();
                 $('#dinamic-container').html(html);
 
-                $('#createAd').on('click', function (ev) {
+                $('#createAd').on('click', function(ev) {
 
                     let adModel = new CreateAdModel($('#adTitle').val(), $('#adCategory').val(), $('#adDescription').val(), $('#adURL').val(), $('#adStartPrice').val());
 
@@ -28,7 +28,7 @@ export function sell() {
 
                     if (validationResults.CategoryHasError) {
                         $('#adCategory').addClass('red-border-error');
-                        error = true; 
+                        error = true;
                     }
 
                     if (validationResults.adDescriptionHasError) {
@@ -36,14 +36,14 @@ export function sell() {
                         error = true;
                     }
 
-                    if (validationResults.ImgUrlHasError) {
-                        $('#adURL').addClass('red-border-error').html(validationResults.ImgUrlErrorMessage);
-                        error = true;
-                    }
+                    //if (validationResults.ImgUrlHasError) {
+                    //    $('#adURL').addClass('red-border-error').html(validationResults.ImgUrlErrorMessage);
+                    //    error = true;
+                    //}
 
                     if (validationResults.PriceHasError) {
                         $('#adStartPrice').addClass('red-border-error').html(validationResults.PriceErrorMessage);
-                        error = true;                        
+                        error = true;
                     }
                     // let adDetails = {
                     //     title: $('#adTitle').val(),
@@ -52,25 +52,28 @@ export function sell() {
                     //     imageUrl: getDefaultImageIfNotProvided('#adURL'),
                     //     startPrice: $('#adStartPrice').val()
                     // };
-                    if(error){
+                    if (error) {
                         return;
                     }
 
                     data.createSell(adModel)
 
-                        .then(function (success) {
-                            $("#dialog-message").dialog({
-                                modal: true,
-                                buttons: {
-                                    'Auction has been created': function () {
-                                        document.location = '#/buy';
-                                        $(this).dialog("close");
-                                    }
+                    .then(function(success) {
+                        debugger;
+                        $("#dialog-message").dialog({
+                            modal: true,
+                            buttons: {
+                                'Auction has been created': function() {
+                                    document.location = '#/buy';
+                                    $(this).dialog("close");
                                 }
-                            });
-                        }, function (fail) {
-                            console.log('fail');
+                            }
                         });
+                    }, function(fail) {
+                        console.log(adModel);
+                        debugger;
+                        console.log('fail');
+                    });
 
                     ev.preventDefault();
                     return false;

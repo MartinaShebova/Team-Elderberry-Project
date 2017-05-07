@@ -8,14 +8,14 @@ export function home() {
         .then((templateFunc) => {
 
             data.getAds()
-                .then(function (adsData) {
+                .then(function(adsData) {
                     let adsInfoObject = templateFunc(adsData);
 
                     var random = Math.floor(Math.random() * adsInfoObject.length);
 
                     $('#dinamic-container').html(adsInfoObject);
 
-                }, function (error) {
+                }, function(error) {
 
                 });
         });
