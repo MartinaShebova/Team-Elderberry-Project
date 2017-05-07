@@ -25,6 +25,9 @@ export function login() {
                     localStorage.setItem("email", resp.user.email);
                     localStorage.setItem("authKey", resp.token);
                     $(document.body).addClass("logged-in");
+                    $('#login-link').addClass('hidden');
+                    $('#logout-link').removeClass('hidden');
+                    $('#profile-link').removeClass('hidden');
 
                     // var date = new Date();
 
@@ -33,7 +36,7 @@ export function login() {
                     // document.cookie = "email=" + resp.user.email;
                     // document.cookie = "authKey=" + resp.token;
                     // document.cookie = "expires=" + date;                                     
-                    
+
                     document.location = '/#';
                 });
 
@@ -42,4 +45,3 @@ export function login() {
             });
         });
 }
-

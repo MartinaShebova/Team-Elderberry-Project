@@ -1,6 +1,8 @@
 /*globals Navigo */
+import * as data from 'data';
 import { home } from 'homeController';
 import { login } from 'loginController';
+import { logout } from 'logoutController';
 import { register } from 'registerController';
 import { sell } from 'sellController';
 import { buy } from 'buyController';
@@ -12,48 +14,31 @@ import { profile } from 'profileController';
 (function routing() {
 
     let router = new Navigo(null, true);
-
-    router
-
-        .on(function () {
+    router.on(function() {
             home();
         })
-
         .on('/sell', sell)
-
         .on('/buy', buy)
-
         .on('/about', about)
-
         .on('/contact', contact)
-
         .on('/FAQ', faq)
-
         .on('/login', login)
-
         .on('/register', register)
-
+        .on('logout', logout)
         .on('/profile', profile)
-
-        //When we have user with ID
-        .on('/user/:id/:action', function (params) {
-            // If we have http://site.com/user/42/save as a url then
-            // params.id = 42
-            // params.action = save
-        })
-
-        //GET Request
-        .on('/user/:id/:action', function (params, query) {
-            // If we have http://site.com/user/42/save?answer=42 as a url then
-            // params.id = 42
-            // params.action = save
-            // query = answer=42
-        })
-
         .resolve();
 
+    if (data.isLoggedIn()) {
+        $('#login-link').addClass('hidden');
+        $('#logout-link').removeClass('hidden');
+        $('#profile-link').removeClass('hidden');
+    }
+
+
+
+
     //Not found
-    router.notFound(function (query) {
+    router.notFound(function(query) {
         // ...
     });
 }());

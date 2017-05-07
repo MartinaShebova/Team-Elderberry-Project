@@ -21,6 +21,7 @@ System.config({
         'homeController': 'public/js/controllers/homeController.js',
         'sellController': 'public/js/controllers/sellController.js',
         'loginController': 'public/js/controllers/loginController.js',
+        'logoutController': 'public/js/controllers/logoutController.js',
         'registerController': 'public/js/controllers/registerController.js',
         'buyController': 'public/js/controllers/buyController.js',
         'aboutController': 'public/js/controllers/aboutController.js',

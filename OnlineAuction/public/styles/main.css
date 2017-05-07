@@ -1,6 +1,8 @@
 /*font: normal 36px 'Cookie', cursive;*/
+
 body {
-    padding-top: 60px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+    padding-top: 60px;
+    /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
 }
 
 .navbar-fixed-top .nav {
@@ -10,129 +12,132 @@ body {
 .navbar-fixed-top .navbar-brand {
     padding: 0 15px;
 }
-.navbar-brand label{
-	font: normal 36px 'Cookie', cursive;
-}
-.font{
-	font: normal 36px 'Cookie', cursive;
-}
-.navbar-brand label span{
-	color: #CCCC00;
+
+.navbar-brand label {
+    font: normal 36px 'Cookie', cursive;
 }
 
+.font {
+    font: normal 36px 'Cookie', cursive;
+}
+
+.navbar-brand label span {
+    color: #CCCC00;
+}
+
+.hidden {
+    display: none;
+}
 
 @media(min-width:768px) {
     body {
-        padding-top: 100px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+        padding-top: 100px;
+        /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
     }
-
     .navbar-fixed-top .navbar-brand {
         padding: 15px 0;
     }
 }
 
+
 /*Slider part*/
 
 .img-responsive,
-.thumbnail > img,
-.thumbnail a > img,
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-  display: block;
-  width: 100%;
-  height: auto;
+.thumbnail>img,
+.thumbnail a>img,
+.carousel-inner>.item>img,
+.carousel-inner>.item>a>img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
+
 
 /* ------------------- Carousel Styling ------------------- */
 
 .carousel-inner {
-  border-radius: 5px;
+    border-radius: 5px;
 }
 
 .carousel-caption {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
-  padding: 0 0 10px 25px;
-  color: #fff;
-  text-align: left;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    padding: 0 0 10px 25px;
+    color: #fff;
+    text-align: left;
 }
 
 .carousel-indicators {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
-  z-index: 15;
-  margin: 0;
-  padding: 0 25px 25px 0;
-  text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    z-index: 15;
+    margin: 0;
+    padding: 0 25px 25px 0;
+    text-align: right;
 }
 
 .carousel-control.left,
 .carousel-control.right {
-  background-image: none;
+    background-image: none;
 }
 
 
 /* ------------------- Section Styling - Not needed for carousel styling ------------------- */
 
 .section-white {
-   padding: 10px 0;
+    padding: 10px 0;
 }
 
 .section-white {
-  background-color: #fff;
-  color: #555;
+    background-color: #fff;
+    color: #555;
 }
 
 @media screen and (min-width: 768px) {
-
-  .section-white {
-     padding: 1.5em 0;
-  }
-
+    .section-white {
+        padding: 1.5em 0;
+    }
 }
 
 @media screen and (min-width: 992px) {
-
-  .container {
-    max-width: 930px;
-  }
-
+    .container {
+        max-width: 930px;
+    }
 }
 
-#login-clicked .btn-default{
-  background-color: #9D9D9D;
+#login-clicked .btn-default {
+    background-color: #9D9D9D;
 }
 
-#register-clicked .btn-default{
-  background-color: #CCCC00;
+#register-clicked .btn-default {
+    background-color: #CCCC00;
 }
 
-#logout-clicked .btn-default{
-  background-color: #9D9D9D;
-}
-#profile-clicked .btn-default{
-  background-color: #9D9D9D;
+#logout-clicked .btn-default {
+    background-color: #9D9D9D;
 }
 
-#btn-login .btn-default{
-  background-color: #CCCC00;
-}
-.color-white{
-  color: white;
+#profile-clicked .btn-default {
+    background-color: #9D9D9D;
 }
 
+#btn-login .btn-default {
+    background-color: #CCCC00;
+}
 
+.color-white {
+    color: white;
+}
 
-.img-circle{
+.img-circle {
     margin: 0 auto;
 }
-
 
 #myFooter {
     background-color: #3c3d41;
@@ -219,10 +224,10 @@ body {
     }
 }
 
-.hidden{
+.hidden {
     display: none;
 }
 
-.red-border-error{
+.red-border-error {
     border: 1px solid red;
 }
