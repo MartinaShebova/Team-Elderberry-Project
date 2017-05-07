@@ -2,9 +2,8 @@ import { jquery } from 'jquery';
 import { jqueryUI } from 'jqueryUI';
 import { getTemplate } from 'templateGenerator';
 import * as data from 'data';
-// import * as Validator from 'validator';
-// import * as CreateAdModel from 'createAdModel';
-
+import { Validator } from 'validator';
+import { CreateAdModel } from 'createAdModel';
 
 export function sell() {
     if (data.isLoggedIn()) {
@@ -15,47 +14,49 @@ export function sell() {
                 $('#dinamic-container').html(html);
 
                 $('#createAd').on('click', function (ev) {
-                    // console.log(2222);
 
+                    let adModel = new CreateAdModel($('#adTitle').val(), $('#adCategory').val(), $('#adDescription').val(), $('#adURL').val(), $('#adStartPrice').val());
 
-                    //                     let adModel = new CreateAdModel($('#adTitle').val(), $('#adCategory').val(), $('#adDescription').val(), $('#adURL').val(), $('#adStartPrice').val());
+                    let validationResults = Validator.validateAd(adModel);
 
-                    //                     let validationResults = Validator.validateAd(adModel);
+                    let error = false;
 
-                    //                     if (validationResults.TitleHasError) {
-                    //                         $('#adTitle').addClass('has-error').addClass('has-feedback').html(validationResults.TitleErrorMessage);
-                    //                         return;
-                    //                     }
+                    if (validationResults.TitleHasError) {
+                        $('#adTitle').addClass('red-border-error').html(validationResults.TitleErrorMessage);
+                        error = true;
+                    }
 
-                    //                     if (validationResults.CategoryHasError) {
-                    //                         $('#adCategory').addClass('has-error').addClass('has-feedback').html(validationResults.CategoryErrorMessage);
-                    //                         return;
-                    //                     }
+                    if (validationResults.CategoryHasError) {
+                        $('#adCategory').addClass('red-border-error');
+                        error = true; 
+                    }
 
-                    //                     if (validationResults.adDescriptionHasError) {
-                    //                         $('#adDescription').addClass('has-error').addClass('has-feedback').html(validationResults.adDescriptionErrorMessage);
-                    //                         return;
-                    //                     }
+                    if (validationResults.adDescriptionHasError) {
+                        $('#adDescription').addClass('red-border-error').html(validationResults.adDescriptionErrorMessage);
+                        error = true;
+                    }
 
-                    //                     if (validationResults.ImgUrlHasError) {
-                    //                         $('#adURL').addClass('has-error').addClass('has-feedback').html(validationResults.ImgUrlErrorMessage);
-                    //                         return;
-                    //                     }
+                    if (validationResults.ImgUrlHasError) {
+                        $('#adURL').addClass('red-border-error').html(validationResults.ImgUrlErrorMessage);
+                        error = true;
+                    }
 
-                    //                     if (validationResults.PriceHasError) {
-                    //                         $('#adStartPrice').addClass('has-error').addClass('has-feedback').html(validationResults.PriceErrorMessage);
-                    //                         return;
-                    //                     }
-                    let adDetails = {
-                        title: $('#adTitle').val(),
-                        state: $('#adCategory').val(),
-                        description: $('#adDescription').val(),
-                        imageUrl: getDefaultImageIfNotProvided('#adURL'),
-                        startPrice: $('#adStartPrice').val()
-                    };
+                    if (validationResults.PriceHasError) {
+                        $('#adStartPrice').addClass('red-border-error').html(validationResults.PriceErrorMessage);
+                        error = true;                        
+                    }
+                    // let adDetails = {
+                    //     title: $('#adTitle').val(),
+                    //     state: $('#adCategory').val(),
+                    //     description: $('#adDescription').val(),
+                    //     imageUrl: getDefaultImageIfNotProvided('#adURL'),
+                    //     startPrice: $('#adStartPrice').val()
+                    // };
+                    if(error){
+                        return;
+                    }
 
-                    console.log(adDetails);
-                    data.createSell(adDetails)
+                    data.createSell(adModel)
 
                         .then(function (success) {
                             $("#dialog-message").dialog({

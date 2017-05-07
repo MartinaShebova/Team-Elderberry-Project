@@ -54,3 +54,5 @@ class CreateAdModel{
         this._adPrice = filteredPrice;
     }
 }
+
+export { CreateAdModel };

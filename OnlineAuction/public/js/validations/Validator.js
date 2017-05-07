@@ -20,14 +20,13 @@ class Validator {
                 CategoryErrorMessage: 'Please, choose a valid category'
             };
         }
-
         if (!createAdModel.adDescription.match(adTitleRegexMatch) &&
             createAdModel.adDescription.length < 10 &&
-            createAdModel.adDescription.length >= 80) {
+            createAdModel.adDescription.length >= 200) {
 
             return {
                 adDescriptionHasError: true,
-                adDescriptionErrorMessage: 'You can write A-Z, a-z, 0-9, min symbols 10, max symbols 80'
+                adDescriptionErrorMessage: 'You can write A-Z, a-z, 0-9, min symbols 10, max symbols 200'
             };
         }
 
@@ -47,3 +46,5 @@ class Validator {
         }
     }
 }
+
+export { Validator };
