@@ -40,7 +40,7 @@ exports.createSell = function(req, res) {
 }
 
 exports.getSells = function(req, res) {
-    data.getAllBooks()
+    data.getAllSells()
         .then(sells => res.status(200).json(sells))
         .catch(error => {
             console.log(error);

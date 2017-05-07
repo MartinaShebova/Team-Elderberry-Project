@@ -42,7 +42,7 @@ exports.createSell = function(sell, owner) {
     });
 }
 
-exports.getAllBooks = function() {
+exports.getAllSells = function() {
     return new Promise((resolve, reject) => {
         Sell.find({}).sort({ createdAt: -1 }).exec((err, sells) => {
             if (err) {
