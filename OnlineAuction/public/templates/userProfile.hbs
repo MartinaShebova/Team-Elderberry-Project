@@ -46,22 +46,22 @@
                         </div>
                     </div>
                 </div>
-
+                {{#each user.sells}}
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="col-sm-3">
-                            <img src="" alt="user auction picture">
+                            <img class="sell-picture" src="{{sellImageUrl}}" alt="user auction picture">
                         </div>
                         <div class="col-sm-9">
                             <ul class="list-group">
-                                <li class="list-group-item">Title</li>
-                                <li class="list-group-item">Current Price</li>
-                                <li class="list-group-item">State (active or finished)</li>
+                                <li class="list-group-item"><a href="#/sells/{{sellId}}">{{sellTitle}}</a></li>
+                                <li class="list-group-item">{{sellCurrentPrice}} $</li>
+                                <li class="list-group-item">{{sellCurrentDate}}</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-
+                {{/each}}
             	<div class="row">
                     <div class="col-sm-12">
                         <div class="well well-sm text-center" style="color: green">

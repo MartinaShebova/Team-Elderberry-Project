@@ -84,10 +84,13 @@ exports.bidSell = function(userToBeAdded, sellId, sum) {
 
 exports.addSellToUser = function(user, sell) {
     return new Promise((resolve, reeject) => {
+
         let sellToAdd = {
             sellId: sell._id,
             sellTitle: sell.title,
-            sellImageUrl: sell.imageUrl
+            sellImageUrl: sell.imageUrl,
+            sellCurrentPrice: sell.endPrice,
+            sellCurrentDate: sell.finishedAt
         }
         console.log(sellToAdd);
         User.update({ '_id': user._id }, { $push: { 'sells': sellToAdd } }, { upsert: true },
