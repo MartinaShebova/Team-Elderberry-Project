@@ -16,6 +16,8 @@ export function viewSell(params) {
                 data.bidAdsById(sell._id, body)
                     .then((resp) => {
                         console.log(resp);
+                        console.log(sell.endPrice + '$');
+                        $('#price-style').html((sell.endPrice + 5) + '$');
                     })
 
                 ev.preventDefault();
@@ -26,6 +28,7 @@ export function viewSell(params) {
                 data.bidAdsById(sell._id, body)
                     .then((resp) => {
                         console.log(resp);
+                        $('#price-style').html((sell.endPrice + 10) + '$');
                     })
 
                 ev.preventDefault();
@@ -36,6 +39,7 @@ export function viewSell(params) {
                 data.bidAdsById(sell._id, body)
                     .then((resp) => {
                         console.log(resp);
+                        $('#price-style').html((sell.endPrice + 15) + '$');
                     })
 
                 ev.preventDefault();
