@@ -1,57 +1,68 @@
+import { Validator } from 'validator';
+
 class CreateAdModel{
-    constructor(adTitle, adCategory, adDescription, adImageUrl, adPrice) {
-        this.adTitle = adTitle;
-        this.adCategory = adCategory;
-        this.adDescription = adDescription;
-        this.adImageUrl = adImageUrl;
-        this.adPrice = adPrice;
+    constructor(title, state, description, imageUrl, startPrice) {
+        this.title = title;
+        this.state = state;
+        this.description = description;
+        this.startPrice = startPrice;
+        this.imageUrl = imageUrl;        
     }
 
     //adTitle
-    get adTitle() {
-        return this._adTitle;
+    get title() {
+        return this._title;
     }
 
-    set adTitle(filteredTitle) {
-        this._adTitle = filteredTitle;
+    set title(filteredTitle) {
+
+        Validator.validateTitle(filteredTitle);
+        this._title = filteredTitle;
     }
 
     //adCategory
-    get adCategory() {
-        return this._adCategory;
+    get state() {
+        return this._state;
     }
 
-    set adCategory(filteredCategory) {
-        this._adCategory = filteredCategory;
+    set state(filteredCategory) {
+
+        Validator.validateCategory(filteredCategory);
+        this._state = filteredCategory;
     }
 
     //adDescription
-    get adDescription() {
-        return this._adDescription;
+    get description() {
+        return this._description;
     }
 
-    set adDescription(filteredDesc) {
-        this._adDescription = filteredDesc;
+    set description(filteredDesc) {
+
+        Validator.validateDesc(filteredDesc);
+        this._description = filteredDesc;
     }
 
-    //adImageUrl
-
-    get adImageUrl() {
-        return this._adImageUrl;
+    //adUrl
+    get imageUrl() {
+        return this._imageUrl;
     }
 
-    set adImageUrl(filteredImgUrl) {
-        this._adImageUrl = filteredImgUrl;
+    set imageUrl(filteredImgUrl) {
+
+        Validator.validateUrl(filteredImgUrl);
+        this._imageUrl = filteredImgUrl;
     }
 
     //adPrice
 
-    get adPrice() {
-        return this._adPrice;
+    get startPrice() {
+        return this._startPrice;
     }
 
-    set adPrice(filteredPrice) {
-        this._adPrice = filteredPrice;
+    set startPrice(filteredPrice) {
+
+        Validator.validatePrice(filteredPrice);
+        this._startPrice = filteredPrice;
     }
 }
 

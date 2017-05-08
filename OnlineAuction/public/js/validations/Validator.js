@@ -1,48 +1,59 @@
 class Validator {
 
-    static validateAd(createAdModel) {
-        var adTitleRegexMatch = "/^[a-zA-Z0-9]+$/";
-        var adUrlRegexMatch = "/(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/";
+    static validateTitle(title) {
 
-        if (!createAdModel.adTitle.match(adTitleRegexMatch) &&
-            createAdModel.adTitle.length < 10 &&
-            createAdModel.adTitle.length >= 80) {
+        let errorMessage = 'You can write A-Z, a-z, 0-9, min symbols 10, max symbols 80';
 
-            return {
-                TitleHasError: true,
-                TitleErrorMessage: 'You can write A-Z, a-z, 0-9, min symbols 10, max symbols 80'
-            };
+        if (title.length < 10 ||
+            title.length >= 80) {
+
+            $('#adTitle').addClass('red-border-error').val('').attr('placeholder', errorMessage);
+            throw new Error();
+        }
+    }
+
+    static validateCategory(category) {
+
+        if (category === 'Select Category') {
+            $('#adCategory').addClass('red-border-error');
+            throw new Error();
+            
+        }
+    }
+
+    static validateDesc(desc) {
+
+        let errorMessage = 'Description must be between 10 and 200 symbols';
+
+        if (desc.length <= 10 ||
+            desc.length >= 200) {
+
+            $('#adDescription').addClass('red-border-error').val(errorMessage);
+            throw new Error();
+
+        }
+    }
+
+    static validateUrl(url) {
+        let errorMessage = 'Image url must be a string';
+
+        if (typeof url !== 'string') {
+            $('#adURL').addClass('red-border-error').val(errorMessage);
+            throw new Error();
+            
         }
 
-        if (createAdModel.adCategory === 'Select Category') {
-            return {
-                CategoryHasError: true,
-                CategoryErrorMessage: 'Please, choose a valid category'
-            };
-        }
-        if (!createAdModel.adDescription.match(adTitleRegexMatch) &&
-            createAdModel.adDescription.length < 10 &&
-            createAdModel.adDescription.length >= 200) {
+    }
 
-            return {
-                adDescriptionHasError: true,
-                adDescriptionErrorMessage: 'You can write A-Z, a-z, 0-9, min symbols 10, max symbols 200'
-            };
-        }
+    static validatePrice(price) {
+        let errorMessage = 'Price must be between 1 and 10 000';
 
-        if(!createAdModel.adImageUrl.match(adUrlRegexMatch)){
-            return {
-                ImgUrlHasError: true,
-                ImgUrlErrorMessage: 'Please, enter a valid url'
-            };           
-        }
+        if (typeof price !== 'number' ||
+            price <= 0 || price >= 10000) {
 
-        if(typeof createAdModel.adPrice !== 'number' &&
-           createAdModel.adPrice <= 0 || createAdModel.adPrice >= 10000){
-            return {
-                PriceHasError: true,
-                PriceErrorMessage: 'Price must be a positive number to 10000'
-            };           
+            $('#adStartPrice').addClass('red-border-error').val(errorMessage);
+            throw new Error();
+            
         }
     }
 }

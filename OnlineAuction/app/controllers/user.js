@@ -4,8 +4,7 @@ const setUserInfo = require('../../helpers').setUserInfo;
 // User Routes
 exports.viewProfile = function(req, res, next) {
     const userEmail = req.params.email;
-    console.log(userEmail);
-    debugger;
+
     User.findOne({ email: userEmail }, (err, user) => {
         if (!user) {
             res.status(400).json({ error: 'No user could be found for this email.' });
@@ -13,5 +12,5 @@ exports.viewProfile = function(req, res, next) {
         }
         const userToReturn = setUserInfo(user);
         return res.status(200).json({ user: userToReturn });
-    })
+    });
 };

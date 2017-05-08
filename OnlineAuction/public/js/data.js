@@ -31,7 +31,6 @@ export function isLoggedIn() {
 
 export function createSell(adInfo) {
     console.log(adInfo);
-    debugger
     return requester.postJSON("/api/sells/create", adInfo);
 }
 
