@@ -61,11 +61,9 @@ export function viewSell(params) {
     console.log(id);
     Promise.all([data.getAdsById(id), getTemplate("sellView")])
         .then(([resp, templateFunc]) => {
-            console.log(resp);
             const sell = resp;
             console.log(sell)
             let html = templateFunc(sell);
-            console.log(html);
             $("#dinamic-container").html(html);
         });
 }
