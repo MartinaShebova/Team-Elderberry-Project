@@ -13,9 +13,14 @@ export function buy() {
                     let source = jqueryAutocomplete(adsData);
 
                     $('#dinamic-container').html(html);
-                    console.log(source);
+
                     $("#tags").autocomplete({
-                        source: source
+                        source: source,
+                        select: function(inputFieldAccess, selectedValue){
+                            if(source.indexOf(selectedValue) !== -1){
+                                $('#selectedValue').hide();
+                            }
+                        }
                     });
 
                 }, function (error) {
@@ -29,9 +34,11 @@ function jqueryAutocomplete(data) {
     let autocompleteSource = [];
 
     $.each(data, function (index, value) {
-        if (autocompleteSource.indexOf(value.startPrice) === -1) {
-            autocompleteSource.push(value.startPrice);
+        
+        if (autocompleteSource.indexOf(value.title) === -1) {
+            autocompleteSource.push(value.title);
         }
+        
     });
 
     return autocompleteSource;
