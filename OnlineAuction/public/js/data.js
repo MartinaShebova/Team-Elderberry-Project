@@ -36,3 +36,7 @@ export function createSell(adInfo) {
 export function getAds() {
     return requester.getJSON("/api/sells");
 }
+
+export function getWantedAd() {
+    return requester.getJSON("/api/sells/:sellId");
+}

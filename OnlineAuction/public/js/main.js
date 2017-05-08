@@ -10,14 +10,16 @@ import { about } from 'aboutController';
 import { contact } from 'contactController';
 import { faq } from 'faqController';
 import { profile } from 'profileController';
+import { displaySelectedAd } from 'adViewController';
 
 (function routing() {
 
     let router = new Navigo(null, true);
-    router.on(function() {
-            home();
-        })
+    router.on(function () {
+        home();
+    })
         .on('/sell', sell)
+        .on('/api/sells/:sellId', displaySelectedAd)
         .on('/buy', buy)
         .on('/about', about)
         .on('/contact', contact)
@@ -34,11 +36,8 @@ import { profile } from 'profileController';
         $('#profile-link').removeClass('hidden');
     }
 
-
-
-
     //Not found
-    router.notFound(function(query) {
+    router.notFound(function (query) {
         // ...
     });
 }());

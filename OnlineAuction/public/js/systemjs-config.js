@@ -28,6 +28,7 @@ System.config({
         'contactController': 'public/js/controllers/contactController.js',
         'faqController': 'public/js/controllers/faqController.js',
         'profileController': 'public/js/controllers/profileController.js',
+        'adViewController': 'public/js/controllers/adViewController.js',
 
         //App models
         'createAdModel': 'public/js/models/CreateAdModel.js',

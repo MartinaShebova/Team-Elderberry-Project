@@ -41,7 +41,7 @@ export function getJSON(url, headers = {}) {
     headers["content-type"] = "application/json";
     let userAuthKey = localStorage.getItem('authKey');
     if (userAuthKey) {
-        headers['Authorization'] = userAuthKey
+        headers['Authorization'] = userAuthKey;
     }
     return sendRequest("GET", url, null, headers);
 }

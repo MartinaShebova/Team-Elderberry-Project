@@ -4,20 +4,14 @@ import * as data from 'data';
 
 export function home() {
 
-    getTemplate('home')
-        .then((templateFunc) => {
+    Promise.all([getTemplate('home'), data.getAds()])
+        .then(([templateFunc, adsData]) => {
 
-            data.getAds()
-                .then(function(adsData) {
-                    let adsInfoObject = templateFunc(adsData);
+            let getOnlyFourAds = adsData.slice(0,4);
 
-                    var random = Math.floor(Math.random() * adsInfoObject.length);
+            let adsInfoObject = templateFunc(getOnlyFourAds);
 
-                    $('#dinamic-container').html(adsInfoObject);
-
-                }, function(error) {
-
-                });
+            $('#dinamic-container').html(adsInfoObject);
         });
 
 }
