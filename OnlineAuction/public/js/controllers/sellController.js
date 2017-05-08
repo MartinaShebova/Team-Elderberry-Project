@@ -10,6 +10,7 @@ export function sell() {
             .then((templateFunc) => {
                 //Render template
                 let html = templateFunc();
+                
                 $('#dinamic-container').html(html);
 
                 $('#createAd').on('click', function (ev) {
