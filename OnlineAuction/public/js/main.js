@@ -4,7 +4,7 @@ import { home } from 'homeController';
 import { login } from 'loginController';
 import { logout } from 'logoutController';
 import { register } from 'registerController';
-import { sell } from 'sellController';
+import * as sells from 'sellController';
 import { buy } from 'buyController';
 import { about } from 'aboutController';
 import { contact } from 'contactController';
@@ -15,11 +15,11 @@ import { displaySelectedAd } from 'adViewController';
 (function routing() {
 
     let router = new Navigo(null, true);
-    router.on(function () {
-        home();
-    })
-        .on('/sell', sell)
-        .on('/api/sells/:sellId', displaySelectedAd)
+    router.on(function() {
+            home();
+        })
+        .on('/sell', sells.createSell)
+        .on('/sells/:sellId', sells.viewSell)
         .on('/buy', buy)
         .on('/about', about)
         .on('/contact', contact)
@@ -37,7 +37,7 @@ import { displaySelectedAd } from 'adViewController';
     }
 
     //Not found
-    router.notFound(function (query) {
+    router.notFound(function(query) {
         // ...
     });
 }());

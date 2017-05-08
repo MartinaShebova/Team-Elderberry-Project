@@ -4,23 +4,22 @@ import { getTemplate } from 'templateGenerator';
 import * as data from 'data';
 import { CreateAdModel } from 'createAdModel';
 
-export function sell() {
+export function createSell() {
     if (data.isLoggedIn()) {
-        getTemplate('sell')
+        getTemplate('createSell')
             .then((templateFunc) => {
                 //Render template
                 let html = templateFunc();
-                
+
                 $('#dinamic-container').html(html);
 
-                $('#createAd').on('click', function (ev) {
+                $('#createAd').on('click', function(ev) {
 
                     let adModel;
 
                     try {
                         adModel = new CreateAdModel($('#adTitle').val(), $('#adCategory option:selected').text(), $('#adDescription').val(), getDefaultImageIfNotProvided('#adURL'), +$('#adStartPrice').val());
-                    }
-                    catch (Error) {
+                    } catch (Error) {
                         return;
                     }
 
@@ -34,19 +33,19 @@ export function sell() {
 
                     data.createSell(adModelWithoutUnderscoreProperties)
 
-                        .then(function (success) {
-                            $("#dialog-message").dialog({
-                                modal: true,
-                                buttons: {
-                                    'Auction has been created': function () {
-                                        document.location = '#/buy';
-                                        $(this).dialog("close");
-                                    }
+                    .then(function(success) {
+                        $("#dialog-message").dialog({
+                            modal: true,
+                            buttons: {
+                                'Auction has been created': function() {
+                                    document.location = '#/buy';
+                                    $(this).dialog("close");
                                 }
-                            });
-                        }, function (fail) {
-                            console.log(adModel);
+                            }
                         });
+                    }, function(fail) {
+                        console.log(adModel);
+                    });
 
                     ev.preventDefault();
                     return false;
@@ -55,6 +54,20 @@ export function sell() {
     } else {
         document.location = "#/login";
     }
+}
+
+export function viewSell(params) {
+    var id = params.sellId;
+    console.log(id);
+    Promise.all([data.getAdsById(id), getTemplate("sellView")])
+        .then(([resp, templateFunc]) => {
+            console.log(resp);
+            const sell = resp;
+            console.log(sell)
+            let html = templateFunc(sell);
+            console.log(html);
+            $("#dinamic-container").html(html);
+        });
 }
 
 function getDefaultImageIfNotProvided(img) {
