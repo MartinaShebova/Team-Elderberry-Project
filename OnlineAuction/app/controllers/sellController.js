@@ -27,13 +27,17 @@ exports.createSell = function(req, res) {
         return;
     }
 
-
     data.createSell({ title, state, description, imageUrl, startPrice }, owner)
-        .then(dbSell => res.status(201).json({
-            success: true,
-            message: "The Sell is created",
-            sell: dbSell
-        }))
+        .then(dbSell => {
+            if (dbSell) {
+                res.status(201).json({
+                    success: true,
+                    message: "The Sell is created",
+                    sell: dbSell
+                })
+            }
+            data.addSellToUser(owner, dbSell);
+        })
         .catch(error => {
             console.log(error);
             res.status(500).json(error);
@@ -67,7 +71,7 @@ exports.bidSell = function(req, res) {
     data.sellById(sellId).then(sell => {
         console.log(sell);
         if (sell.owner.email == userToBeAdded.email) {
-            res.status(404).json({ message: 'You cannot bid your own trip!' });
+            res.status(404).json({ message: 'You cannot bid your own sell!' });
             return;
         } else {
             data.bidSell(userToBeAdded, sellId, sum)
@@ -76,7 +80,4 @@ exports.bidSell = function(req, res) {
                 })
         }
     })
-
-
-
 }

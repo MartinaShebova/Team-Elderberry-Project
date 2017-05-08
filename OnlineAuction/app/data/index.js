@@ -82,17 +82,21 @@ exports.bidSell = function(userToBeAdded, sellId, sum) {
     });
 }
 
-exports.addSellToUser = function(userId, sellId) {
+exports.addSellToUser = function(user, sell) {
     return new Promise((resolve, reeject) => {
-        let sell = {
-            sellId: sellId,
+        let sellToAdd = {
+            sellId: sell._id,
+            sellTitle: sell.title,
+            sellImageUrl: sell.imageUrl
         }
-        let sum = +sym;
-        User.update({ '_id': userId }, { $push: { 'sells': sell } }, { upsert: true },
+        console.log(sellToAdd);
+        User.update({ '_id': user._id }, { $push: { 'sells': sellToAdd } }, { upsert: true },
             function(err, User) {
-                if (err) console.log(err);
-            });
+                if (err) {
+                    console.log(err);
+                }
 
-        resolve();
+                resolve(User);
+            });
     });
 }

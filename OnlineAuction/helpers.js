@@ -11,6 +11,8 @@ exports.setUserInfo = function setUserInfo(request) {
         imageUrl: request.imageUrl,
         mobileNumber: request.mobileNumber,
         address: request.address,
+        sells: request.sells,
+        buys: request.buys,
         role: request.role
     };
 
