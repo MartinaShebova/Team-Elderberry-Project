@@ -11,7 +11,7 @@ System.config({
         'jquery': 'libs/jquery/dist/jquery.min.js',
         'bootstrap-js': 'libs/bootstrap/dist/js/bootstrap.min.js',
         'jqueryUI': 'public/libs/jquery-ui.min.js', // Could not load it from node_modules
-        'flexSlider': 'public/libs/jquery.flexslider-min.js',
+        'flexSlider': 'public/libs/flexSlider/jquery.flexslider-min.js',
 
         // App files
         'main': 'public/js/main.js',
