@@ -44,6 +44,5 @@ module.exports = function(app) {
 
     sellRoutes.post('/:sellId/bid', requireAuth, SellController.bidSell);
 
-
     app.use('/api', apiRoutes);
 };

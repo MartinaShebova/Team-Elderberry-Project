@@ -8,8 +8,38 @@ export function viewSell(params) {
     Promise.all([data.getAdsById(id), getTemplate("sellView")])
         .then(([resp, templateFunc]) => {
             const sell = resp;
-            console.log(sell);
             let html = templateFunc(sell);
             $("#dinamic-container").html(html);
+
+            $('#btn-5').on('click', (ev) => {
+                const body = { 'sum': 5 };
+                data.bidAdsById(sell._id, body)
+                    .then((resp) => {
+                        console.log(resp);
+                    })
+
+                ev.preventDefault();
+                return false;
+            });
+            $('#btn-10').on('click', (ev) => {
+                const body = { 'sum': 10 };
+                data.bidAdsById(sell._id, body)
+                    .then((resp) => {
+                        console.log(resp);
+                    })
+
+                ev.preventDefault();
+                return false;
+            });
+            $('#btn-15').on('click', (ev) => {
+                const body = { 'sum': 15 };
+                data.bidAdsById(sell._id, body)
+                    .then((resp) => {
+                        console.log(resp);
+                    })
+
+                ev.preventDefault();
+                return false;
+            })
         });
 }

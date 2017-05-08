@@ -30,7 +30,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <strong>Expires at:</strong> ?????
+                                <strong>Expires at:</strong> {{this.finishedAt}}
                             </td>
                         </tr>
                         <tr>
@@ -40,7 +40,7 @@
                         </tr>
                         <tr>
                             <td class="success">
-                                <strong>Current Best Offer:</strong><label id="price-style"> {{this.startPrice}}$</label>
+                                <strong>Current Best Offer:</strong><label id="price-style"> {{this.endPrice}}$</label>
                             </td>
                         </tr>
 
@@ -48,9 +48,9 @@
                 </div>
             </div>
             <div class="panel-footer">
-                <button class="btn btn-default btn-sm" href="#" type="button">5 BGN</button>
-                <button class="btn btn-success btn-sm" href="#" type="button">10 BGN</button>
-                <button class="btn btn-danger btn-sm" href="#" type="button">15 BGN</button>
+                <button class="btn btn-default btn-sm" id="btn-5" type="button">5 BGN</button>
+                <button class="btn btn-success btn-sm" id="btn-10" type="button">10 BGN</button>
+                <button class="btn btn-danger btn-sm" id="btn-15" type="button">15 BGN</button>
             </div>
         </div>
     </div>

@@ -40,3 +40,7 @@ export function getAds() {
 export function getAdsById(id) {
     return requester.getJSON(`/api/sells/${id}`);
 }
+
+export function bidAdsById(id, sum) {
+    return requester.postJSON(`/api/sells/${id}/bid`, sum);
+}

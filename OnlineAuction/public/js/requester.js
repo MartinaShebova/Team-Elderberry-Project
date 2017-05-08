@@ -24,7 +24,11 @@ export function get(url, headers = {}) {
 }
 
 export function putJSON(url, body, headers = {}) {
-    headers["content-type"] = "application/json";
+    headers = {
+        'Authorization': localStorage.getItem('authKey'),
+        'content-type': 'application/json'
+    };
+
     return sendRequest("PUT", url, JSON.stringify(body), headers);
 }
 
