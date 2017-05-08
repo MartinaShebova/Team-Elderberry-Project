@@ -4,13 +4,13 @@ import { home } from 'homeController';
 import { login } from 'loginController';
 import { logout } from 'logoutController';
 import { register } from 'registerController';
-import * as sells from 'sellController';
+import { createSell } from 'sellController';
 import { buy } from 'buyController';
 import { about } from 'aboutController';
 import { contact } from 'contactController';
 import { faq } from 'faqController';
 import { profile } from 'profileController';
-import { displaySelectedAd } from 'adViewController';
+import { viewSell } from 'adViewController';
 
 (function routing() {
 
@@ -18,8 +18,8 @@ import { displaySelectedAd } from 'adViewController';
     router.on(function() {
             home();
         })
-        .on('/sell', sells.createSell)
-        .on('/sells/:sellId', sells.viewSell)
+        .on('/sell', createSell)
+        .on('/sells/:sellId', viewSell)
         .on('/buy', buy)
         .on('/about', about)
         .on('/contact', contact)
