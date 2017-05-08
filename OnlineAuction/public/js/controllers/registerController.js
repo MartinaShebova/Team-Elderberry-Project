@@ -1,6 +1,8 @@
 import { jquery } from 'jquery';
+import { jqueryUI } from 'jqueryUI';
 import { getTemplate } from 'templateGenerator';
 import * as data from 'data';
+import { UserRegisterModel } from 'UserRegisterModel';
 
 export function register() {
 
@@ -11,29 +13,46 @@ export function register() {
             $('#dinamic-container').html(html);
 
             $("#btn-register").on("click", (ev) => {
-                let user = {
-                    email: $("#email").val(),
-                    password: $("#password").val(),
-                    firstname: $("#firstname").val(),
-                    lastname: $("#lastname").val(),
-                    imageUrl: $("#image-url").val(),
-                    mobileNumber: $("#mobileNumber").val(),
-                    address: $('#address').val()
+
+                let registrationModel;
+
+                try {
+                    registrationModel = new UserRegisterModel($('#email').val(), $('#password').val(), $('#firstname').val(), $('#lastname').val(), $('#image-url').val(), +$('#mobileNumber').val(), $('#address').val());
+                } catch (Error) {
+                    return;
+                }
+
+                let registrationModelWithoutUnderscoreProperties = {
+                    email: registrationModel._email,
+                    password: registrationModel._password,
+                    firstname: registrationModel._firstname,
+                    lastname: registrationModel._lastname,
+                    imageUrl: registrationModel._imageUrl,
+                    mobileNumber: registrationModel._mobileNumber,
+                    address: registrationModel._address
 
                 };
 
-                data.register(user)
+                data.register(registrationModelWithoutUnderscoreProperties)
                     .then((resp) => {
-                        return data.login(user);
+                        return data.login(registrationModelWithoutUnderscoreProperties);
                     })
                     .then((resp) => {
                         localStorage.setItem("email", resp.user.email);
                         localStorage.setItem("authKey", resp.token);
-                        $(document.body).addClass("logged-in");
+                        $(document.body).addClass("logged-in");                        
+                        $("#dialog-successful-reg").dialog({
+                            modal: true,
+                            buttons: {
+                                'Successfully Registered': function () {
+                                    document.location = '#/';
+                                    $(this).dialog("close");
+                                }
+                            }
+                        });
                         $('#login-link').addClass('hidden');
                         $('#logout-link').removeClass('hidden');
                         $('#profile-link').removeClass('hidden');
-                        document.location = "#/";
                     });
                 ev.preventDefault();
                 return false;

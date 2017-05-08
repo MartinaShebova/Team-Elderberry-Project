@@ -1,4 +1,4 @@
-class Validator {
+class CreateAdValidator {
 
     static validateTitle(title) {
 
@@ -15,7 +15,7 @@ class Validator {
     static validateCategory(category) {
 
         if (category === 'Select Category') {
-            $('#adCategory').addClass('red-border-error');
+            $('#adCategory').addClass('red-border-error').removeClass('red-border-error');
             throw new Error();
             
         }
@@ -28,7 +28,7 @@ class Validator {
         if (desc.length <= 10 ||
             desc.length >= 200) {
 
-            $('#adDescription').addClass('red-border-error').val(errorMessage);
+            $('#adDescription').addClass('red-border-error').val('').attr('placeholder', errorMessage);
             throw new Error();
 
         }
@@ -38,7 +38,7 @@ class Validator {
         let errorMessage = 'Image url must be a string';
 
         if (typeof url !== 'string') {
-            $('#adURL').addClass('red-border-error').val(errorMessage);
+            $('#adURL').addClass('red-border-error').val('').attr('placeholder', errorMessage);
             throw new Error();
             
         }
@@ -51,11 +51,11 @@ class Validator {
         if (typeof price !== 'number' ||
             price <= 0 || price >= 10000) {
 
-            $('#adStartPrice').addClass('red-border-error').val(errorMessage);
+            $('#adStartPrice').addClass('red-border-error').val('').attr('placeholder', errorMessage);
             throw new Error();
             
         }
     }
 }
 
-export { Validator };
+export { CreateAdValidator };

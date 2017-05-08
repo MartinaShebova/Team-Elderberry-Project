@@ -31,7 +31,11 @@ System.config({
         'adViewController': 'public/js/controllers/adViewController.js',
 
         //App models
-        'createAdModel': 'public/js/models/CreateAdModel.js',
-        'validator': 'public/js/validations/Validator.js'
+        'CreateAdModel': 'public/js/models/CreateAdModel.js',
+        'UserRegisterModel': 'public/js/models/UserRegisterModel.js',
+
+        //App validators
+        'CreateAdValidator': 'public/js/validations/CreateAdValidator.js',
+        'UserRegisterValidator': 'public/js/validations/UserRegisterValidator.js'
     }
 });

@@ -1,4 +1,4 @@
-import { Validator } from 'validator';
+import { CreateAdValidator } from 'CreateAdValidator';
 
 class CreateAdModel{
     constructor(title, state, description, imageUrl, startPrice) {
@@ -16,7 +16,7 @@ class CreateAdModel{
 
     set title(filteredTitle) {
 
-        Validator.validateTitle(filteredTitle);
+        CreateAdValidator.validateTitle(filteredTitle);
         this._title = filteredTitle;
     }
 
@@ -27,7 +27,7 @@ class CreateAdModel{
 
     set state(filteredCategory) {
 
-        Validator.validateCategory(filteredCategory);
+        CreateAdValidator.validateCategory(filteredCategory);
         this._state = filteredCategory;
     }
 
@@ -38,7 +38,7 @@ class CreateAdModel{
 
     set description(filteredDesc) {
 
-        Validator.validateDesc(filteredDesc);
+        CreateAdValidator.validateDesc(filteredDesc);
         this._description = filteredDesc;
     }
 
@@ -49,7 +49,7 @@ class CreateAdModel{
 
     set imageUrl(filteredImgUrl) {
 
-        Validator.validateUrl(filteredImgUrl);
+        CreateAdValidator.validateUrl(filteredImgUrl);
         this._imageUrl = filteredImgUrl;
     }
 
@@ -61,7 +61,7 @@ class CreateAdModel{
 
     set startPrice(filteredPrice) {
 
-        Validator.validatePrice(filteredPrice);
+        CreateAdValidator.validatePrice(filteredPrice);
         this._startPrice = filteredPrice;
     }
 }

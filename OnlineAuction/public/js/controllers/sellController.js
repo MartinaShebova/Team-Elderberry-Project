@@ -2,7 +2,7 @@ import { jquery } from 'jquery';
 import { jqueryUI } from 'jqueryUI';
 import { getTemplate } from 'templateGenerator';
 import * as data from 'data';
-import { CreateAdModel } from 'createAdModel';
+import { CreateAdModel } from 'CreateAdModel';
 
 export function createSell() {
     if (data.isLoggedIn()) {
