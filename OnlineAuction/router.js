@@ -38,9 +38,12 @@ module.exports = function(app) {
 
     sellRoutes.get('/', SellController.getSells);
 
+    sellRoutes.post('/create', requireAuth, SellController.createSell);
+
     sellRoutes.get('/:sellId', SellController.sellById);
 
-    sellRoutes.post('/create', requireAuth, SellController.createSell);
+    sellRoutes.post('/:sellId/bid', requireAuth, SellController.bidSell);
+
 
     app.use('/api', apiRoutes);
 };

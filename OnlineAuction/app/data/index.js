@@ -65,3 +65,34 @@ exports.sellById = function(sellId) {
         });
     });
 }
+
+exports.bidSell = function(userToBeAdded, sellId, sum) {
+    return new Promise((resolve, reeject) => {
+        let buyer = {
+            email: userToBeAdded.email,
+            userId: userToBeAdded.Id
+        }
+        Sell.update({ '_id': sellId }, { $push: { 'buyer': buyer }, $inc: { 'endPrice': +sum } }, { upsert: true },
+            function(err, sell) {
+                if (err) {
+                    console.log(err);
+                }
+                resolve(sell);
+            });
+    });
+}
+
+exports.addSellToUser = function(userId, sellId) {
+    return new Promise((resolve, reeject) => {
+        let sell = {
+            sellId: sellId,
+        }
+        let sum = +sym;
+        User.update({ '_id': userId }, { $push: { 'sells': sell } }, { upsert: true },
+            function(err, User) {
+                if (err) console.log(err);
+            });
+
+        resolve();
+    });
+}

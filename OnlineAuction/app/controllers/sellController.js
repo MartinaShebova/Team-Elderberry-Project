@@ -3,6 +3,7 @@ const Sell = require('../models/sell'),
     data = require('../data/index.js');
 
 exports.createSell = function(req, res) {
+    console.log(req);
     const owner = req.user,
         title = req.body.title,
         state = req.body.state,
@@ -58,4 +59,24 @@ exports.sellById = function(req, res) {
 
         })
         .catch(error => res.status(500).json(error));
+}
+exports.bidSell = function(req, res) {
+    const userToBeAdded = req.user;
+    const sellId = req.params.sellId;
+    const sum = req.body.sum;
+    data.sellById(sellId).then(sell => {
+        console.log(sell);
+        if (sell.owner.email == userToBeAdded.email) {
+            res.status(404).json({ message: 'You cannot bid your own trip!' });
+            return;
+        } else {
+            data.bidSell(userToBeAdded, sellId, sum)
+                .then(sell => {
+                    res.status(200).json(sell);
+                })
+        }
+    })
+
+
+
 }

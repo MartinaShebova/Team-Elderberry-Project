@@ -35,6 +35,10 @@ const SellSchema = new Schema({
         userImageUrl: String,
         role: [String]
     },
+    buyer: {
+        email: String,
+        userId: String
+    }
 }, {
     timestamps: true // Saves createdAt and updatedAt as dates. createdAt will be our timestamp.
 });
