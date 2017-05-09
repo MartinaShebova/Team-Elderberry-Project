@@ -7,27 +7,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Bid-Click-Buy</title>
 
-    {{!--Add favicon--}}
-    <link rel="icon" href="/public/images/favicon-16x16.png" type="image/gif" sizes="16x16"> {{!--Bootstrap--}}
-    <link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous"> {{!--Custom css--}}
+    <!--Add favicon-->
+    <link rel="icon" href="/public/images/favicon-16x16.png" type="image/gif" sizes="16x16">
+    <!--Bootstrap-->
+    <link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--Custom css-->
     <link rel="stylesheet" href="/public/styles/main.css">
 
     <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"></link>
 
-    {{!--SystemJs--}}
+    <!--SystemJs-->
     <script src="libs/systemjs/dist/system.js"></script>
     <script src="/public/js/systemjs-config.js"></script>
 
-    {{!--Navigo--}}
+    <!--Navigo-->
     <script src="libs/navigo/lib/navigo.js"></script>
 
-    {{!--Handlebars--}}
+    <!--Handlebars-->
     <script src="libs/handlebars/dist/handlebars.js"></script>
 
-    {{!--Custom js--}}
+    <!--Custom js-->
     <script>
         System.import('main');
     </script>
@@ -37,10 +38,11 @@
 <body>
     <div id="fb-root"></div>
     <script>
-        (function (d, s, id) {
+        (function(d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
+            js = d.createElement(s);
+            js.id = id;
             js.src = "//connect.facebook.net/bg_BG/sdk.js#xfbml=1&version=v2.9";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
@@ -55,8 +57,8 @@
                     <span class="icon-bar"></span>
                 </button>
             <a class="navbar-brand" href="#/" style="padding-left: 50px; padding-top: 20px">
-                    <label>Bid<span>Click</span>Buy</label>
-                </a>
+                <label>Bid<span>Click</span>Buy</label>
+            </a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="font collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
@@ -112,8 +114,7 @@
                                 </a>
                             </div>
                             <br />
-                            <div class="fb-share-button" data-href="https://www.facebook.com/Team-Elderberry-JS-App-121437161755395/" data-layout="button"
-                                data-size="large" data-mobile-iframe="true">
+                            <div class="fb-share-button" data-href="https://www.facebook.com/Team-Elderberry-JS-App-121437161755395/" data-layout="button" data-size="large" data-mobile-iframe="true">
                                 <a class="fb-xfbml-parse-ignore facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2FTeam-Elderberry-JS-App-121437161755395%2F&amp;src=sdkpreparse">
                                     <i class="fa fa-facebook"></i>
                                 </a>

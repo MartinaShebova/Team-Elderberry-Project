@@ -19,18 +19,17 @@ app.use(bodyParser.json());
 
 app.use(logger('dev'));
 
-
+app.use(express.static('public'));
 app.use("/libs", express.static(path.join(__dirname, "/node_modules")));
-app.use("/public", express.static(path.join(__dirname, "/public"))); 
-app.use("/bower", express.static(path.join(__dirname, "/bower_components")));
+app.use("/public", express.static(path.join(__dirname, "/public")));
 
 mongoose.connect(config.database);
 mongoose.Promise = global.Promise;
 
-app.engine(".hbs", exphbs({ extname: ".hbs" }));
-app.set("view engine", ".hbs");
-app.set("views", "views/");
-app.get("/", (req, res) => res.render("index", { layout: false }));
+//app.engine(".hbs", exphbs({ extname: ".hbs" }));
+//app.set("view engine", ".hbs");
+//app.set("views", "views/");
+//app.get("/", (req, res) => res.render("index", { layout: false }));
 
 router(app);
 
