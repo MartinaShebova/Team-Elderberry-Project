@@ -11,6 +11,6 @@ export function about() {
                 $('#dinamic-container').html(html);
             });
     }else{
-        document.location = "/login";
+        document.location = "#/login";
     }
 }

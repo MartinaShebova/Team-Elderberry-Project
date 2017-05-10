@@ -15,7 +15,7 @@ class CreateAdValidator {
     static validateCategory(category) {
 
         if (category === 'Select Category') {
-            $('#adCategory').addClass('red-border-error').removeClass('red-border-error');
+            $('#adCategory').addClass('red-border-error');
             throw new Error();
             
         }

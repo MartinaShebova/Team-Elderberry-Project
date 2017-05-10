@@ -13,12 +13,12 @@
 
 <div class="row">
     {{#each this}}
-    <div id="offersHolder" class="col-sm-3">
-        <h3>{{this.title}}</h3>
-        <img class="img-responsive img-rounded" src="{{this.imageUrl}}" style="width:100%; height: auto"/>
-        <p class="text-justify">{{this.description}}</p>
+    <div class="col-sm-3">
+        <h4>{{this.title}}</h4>
+        <img class="img-responsive img-rounded user-pic" src="{{this.imageUrl}}" />
+        <p class="text-justify flash">Current price: {{this.endPrice}}$</p>
         <p><a class="btn btn-info" href="#/sells/{{this._id}}" id="view-ad-details" role="button">View details &raquo;</a></p>
     </div>
-    {{/each}}
+    {{/each}} 
 </div>
 

@@ -19,7 +19,7 @@ export function faq() {
                 });
             });
     }else{
-        document.location = "/login";
+        document.location = "#/login";
     }
 
 }

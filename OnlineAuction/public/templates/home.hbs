@@ -19,17 +19,17 @@
 <!--Active auctions section-->
 <div class="row">
     <div class="col-lg-12">
-        <div class="well well-sm text-center font" style="color: green">
+        <div class="well well-sm text-center font color-green">
             Explore Active Auctions
         </div>
     </div>
 </div>
-<div class="row">
+<div class="row match-my-cols">
     {{#each this}}
     <div class="col-sm-3">
-        <h3>{{this.title}}</h3>
-        <img class="img-responsive img-rounded" src="{{this.imageUrl}}" style="width:100%; height: auto" />
-        <p class="text-justify">{{this.description}}</p>
+        <h4>{{this.title}}</h4>
+        <img class="img-responsive img-rounded user-pic" src="{{this.imageUrl}}" />
+        <p class="text-justify flash">Current price: {{this.endPrice}}$</p>
         <p><a class="btn btn-info" href="#/sells/{{this._id}}" id="view-ad-details" role="button">View details &raquo;</a></p>
     </div>
     {{/each}}
