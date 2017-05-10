@@ -3,7 +3,6 @@ const Sell = require('../models/sell'),
     data = require('../data/index.js');
 
 exports.createSell = function(req, res) {
-    console.log(req);
     const owner = req.user,
         title = req.body.title,
         state = req.body.state,

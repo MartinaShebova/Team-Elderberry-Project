@@ -25,12 +25,12 @@
                         </tr>
                         <tr>
                             <td>
-                                <strong>Created at:</strong> {{this.createdAt}}
+                                <strong>Created at:</strong> {{formatDate this.createdAt "short"}}  {{formatTime this.createdAt "hhmm"}}
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <strong>Expires at:</strong> {{this.finishedAt}}
+                                <strong>Expires at:</strong> {{formatRelative this.finishedAt "hours"}}
                             </td>
                         </tr>
                         <tr>

@@ -8,7 +8,35 @@ export function viewSell(params) {
     Promise.all([data.getAdsById(id), getTemplate("sellView")])
         .then(([resp, templateFunc]) => {
             const sell = resp;
-            let html = templateFunc(sell);
+            let intlData = {
+                "locales": "en-US",
+                "formats": {
+                    "date": {
+                        "short": {
+                            "day": "numeric",
+                            "month": "long",
+                            "year": "numeric"
+                        }
+                    },
+                    "time": {
+                        "hhmm": {
+                            "hour": "numeric",
+                            "minute": "numeric"
+                        }
+                    },
+                    "relative": {
+                        "hours": {
+                            "units": "hour",
+                            "style": "numeric"
+                        }
+                    }
+                }
+            };
+            let html = templateFunc(sell, {
+                data: {
+                    intl: intlData,
+                }
+            });
             $("#dinamic-container").html(html);
 
             $('#btn-5').on('click', (ev) => {

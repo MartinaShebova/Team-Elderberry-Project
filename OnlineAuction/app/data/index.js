@@ -7,9 +7,9 @@ const User = require('../models/user'),
 mongoose.Promise = global.Promise;
 
 exports.createSell = function(sell, owner) {
-    let today = new Date();
+    let today = Date.now();
     console.log(today);
-    let tomorrow = today.setHours(today.getHours() + 24);
+    let tomorrow = today + (12 * 60 * 60 * 1000);
     console.log(tomorrow);
 
     const newSell = {

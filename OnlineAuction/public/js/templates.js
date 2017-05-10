@@ -1,6 +1,8 @@
 /* globals Handlebars */
 import {get } from 'requester';
 
+HandlebarsIntl.registerWith(Handlebars);
+
 export function getTemplate(templateName) {
     return get(`/public/templates/${templateName}.hbs`)
 
