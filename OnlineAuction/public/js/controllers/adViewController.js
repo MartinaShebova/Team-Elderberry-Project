@@ -70,13 +70,16 @@ export function viewSell(params) {
             $('#btn-15').on('click', (ev) => {
                 const body = { 'sum': 15 };
                 data.bidAdsById(sell._id, body)
-                if (resp.message) {
-                    console.log(resp);
-                } else {
-                    $('#price-style').html((sell.endPrice + 15) + '$');
-                }
+                    .then((resp) => {
+                        if (resp.message) {
+                            console.log(resp);
+                        } else {
+                            $('#price-style').html((sell.endPrice + 10) + '$');
+                        }
+                    })
+
                 ev.preventDefault();
                 return false;
-            })
+            });
         });
 }

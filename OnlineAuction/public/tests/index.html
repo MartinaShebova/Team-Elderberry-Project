@@ -7,7 +7,7 @@
 
     <!--SystemJs-->
     <script src="../libs/systemjs/dist/system.js"></script>
-    <script src="systemjs-config.js"></script>
+    <script src="../public/js/systemjs-config.js"></script>
 
     <!--Navigo-->
     <script src="../libs/navigo/lib/navigo.js"></script>
@@ -19,9 +19,8 @@
 
     <!--Custom js-->
     <script>
-        System.import('main');
+        System.import('../public/js/main.js');
     </script>
-
 </head>
 
 <body>
@@ -34,9 +33,11 @@
     <script src="../libs/sinon/pkg/sinon.js"></script>
     <script src="../libs/sinon-chai/lib/sinon-chai.js"></script>
 
-    <!--app -->
-    <script src="../js/main.js"></script>
 
+    <!-- App: Loaders -->
+    <!-- <script src="../js/data.js"></script> -->
+    <!-- <script src="../js/templates.js"></script> -->
+    <!-- <script src="../js/requester.js"></script> -->
 
     <script>
         mocha.setup('bdd');
