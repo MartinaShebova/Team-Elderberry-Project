@@ -44,9 +44,10 @@ export function viewSell(params) {
                 data.bidAdsById(sell._id, body)
                     .then((resp) => {
                         if (resp.message) {
-                            console.log(resp);
+                            alertify.success(resp.message);
                         } else {
                             $('#price-style').html((sell.endPrice + 5) + '$');
+                            alertify.success('You successfully bid product');
                         }
                     })
 
@@ -58,9 +59,10 @@ export function viewSell(params) {
                 data.bidAdsById(sell._id, body)
                     .then((resp) => {
                         if (resp.message) {
-                            console.log(resp);
+                            alertify.success(resp.message);
                         } else {
                             $('#price-style').html((sell.endPrice + 10) + '$');
+                            alertify.success('You successfully bid product');
                         }
                     })
 
@@ -72,14 +74,15 @@ export function viewSell(params) {
                 data.bidAdsById(sell._id, body)
                     .then((resp) => {
                         if (resp.message) {
-                            console.log(resp);
+                            alertify.success(resp.message);
                         } else {
-                            $('#price-style').html((sell.endPrice + 10) + '$');
+                            $('#price-style').html((sell.endPrice + 15) + '$');
+                            alertify.success('You successfully bid product');
                         }
                     })
 
                 ev.preventDefault();
                 return false;
-            });
+            })
         });
 }

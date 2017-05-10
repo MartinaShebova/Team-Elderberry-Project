@@ -35,21 +35,15 @@ export function register() {
 
                 data.register(registrationModelWithoutUnderscoreProperties)
                     .then((resp) => {
+                        alertify.success('Successfully Registered!');
                         return data.login(registrationModelWithoutUnderscoreProperties);
                     })
                     .then((resp) => {
+                        alertify.success('Hello' + resp.user.email);
                         localStorage.setItem("email", resp.user.email);
                         localStorage.setItem("authKey", resp.token);
-                        $(document.body).addClass("logged-in");                        
-                        $("#dialog-successful-reg").dialog({
-                            modal: true,
-                            buttons: {
-                                'Successfully Registered': function () {
-                                    document.location = '#/';
-                                    $(this).dialog("close");
-                                }
-                            }
-                        });
+                        $(document.body).addClass("logged-in");
+                        document.location = '#/';
                         $('#login-link').addClass('hidden');
                         $('#logout-link').removeClass('hidden');
                         $('#profile-link').removeClass('hidden');

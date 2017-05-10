@@ -22,6 +22,7 @@ export function login() {
                 data.login(user)
 
                 .then((resp) => {
+                    alertify.success('Hello' + resp.user.email);
                     localStorage.setItem("email", resp.user.email);
                     localStorage.setItem("authKey", resp.token);
                     $(document.body).addClass("logged-in");
