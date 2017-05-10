@@ -70,7 +70,7 @@ exports.bidSell = function(req, res) {
     data.sellById(sellId).then(sell => {
         console.log(sell);
         if (sell.owner.email == userToBeAdded.email) {
-            res.status(404).json({ message: 'You cannot bid your own sell!' });
+            res.json({ message: 'You cannot bid your own sell!' });
             return;
         } else {
             data.bidSell(userToBeAdded, sellId, sum)

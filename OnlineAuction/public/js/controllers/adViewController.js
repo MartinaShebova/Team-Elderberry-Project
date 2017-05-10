@@ -43,9 +43,11 @@ export function viewSell(params) {
                 const body = { 'sum': 5 };
                 data.bidAdsById(sell._id, body)
                     .then((resp) => {
-                        console.log(resp);
-                        console.log(sell.endPrice + '$');
-                        $('#price-style').html((sell.endPrice + 5) + '$');
+                        if (resp.message) {
+                            console.log(resp);
+                        } else {
+                            $('#price-style').html((sell.endPrice + 5) + '$');
+                        }
                     })
 
                 ev.preventDefault();
@@ -55,8 +57,11 @@ export function viewSell(params) {
                 const body = { 'sum': 10 };
                 data.bidAdsById(sell._id, body)
                     .then((resp) => {
-                        console.log(resp);
-                        $('#price-style').html((sell.endPrice + 10) + '$');
+                        if (resp.message) {
+                            console.log(resp);
+                        } else {
+                            $('#price-style').html((sell.endPrice + 10) + '$');
+                        }
                     })
 
                 ev.preventDefault();
@@ -65,11 +70,11 @@ export function viewSell(params) {
             $('#btn-15').on('click', (ev) => {
                 const body = { 'sum': 15 };
                 data.bidAdsById(sell._id, body)
-                    .then((resp) => {
-                        console.log(resp);
-                        $('#price-style').html((sell.endPrice + 15) + '$');
-                    })
-
+                if (resp.message) {
+                    console.log(resp);
+                } else {
+                    $('#price-style').html((sell.endPrice + 15) + '$');
+                }
                 ev.preventDefault();
                 return false;
             })
