@@ -39,7 +39,7 @@ export function register() {
                         return data.login(registrationModelWithoutUnderscoreProperties);
                     })
                     .then((resp) => {
-                        alertify.success('Hello' + resp.user.email);
+                        alertify.success('Hello, ' + resp.user.email);
                         localStorage.setItem("email", resp.user.email);
                         localStorage.setItem("authKey", resp.token);
                         $(document.body).addClass("logged-in");
