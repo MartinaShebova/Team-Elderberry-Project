@@ -3,6 +3,8 @@
 Business App - 'Bid-click-buy'
 JavaScript Applications Course 2017, Team 'Elderberry'
 
+https://bid-click-buy.herokuapp.com/
+
 ## Project Description
 
 Design and implement an **object-oriented web SPA application** by choice.
